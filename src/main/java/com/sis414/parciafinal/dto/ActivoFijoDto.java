@@ -1,0 +1,39 @@
+package com.sis414.parciafinal.dto;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+public record ActivoFijoDto(
+    Long id,
+    String codigo,
+    BigDecimal vidaUtil,
+    String descrip,
+    BigDecimal costo,
+    BigDecimal depacu,
+    Integer mes,
+    Integer ano,
+    Boolean brev,
+    Integer dia,
+    String observ,
+    Integer diaAnt,
+    Integer mesAnt,
+    Integer anoAnt,
+    Integer vutAnt,
+    BigDecimal costoAnt,
+    Boolean bandUfv,
+    String codRube,
+    String nroConv,
+    LocalDate feult,
+    String usuar,
+    Integer apiEstado,
+    String codigoSec,
+    String banderas,
+    LocalDate fecMod,
+    String usuMod,
+    Long unidadId,
+    Long grupoId,
+    Long auxiliarId,
+    Long oficinaId,
+    Long responsableId,
+    Long estadoId,
+    Long organismoFinId
+) {}
