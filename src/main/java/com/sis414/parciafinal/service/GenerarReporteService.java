@@ -34,8 +34,23 @@ public class GenerarReporteService {
         List<FilaReporteDto> filas = new ArrayList<>();
         BigDecimal tCosto = BigDecimal.ZERO, tActual = BigDecimal.ZERO, tDep = BigDecimal.ZERO, tNeto = BigDecimal.ZERO;
 
+
         for (ActivoFijo a : activoRepository.findAll()) {
-            if (!ok(r.unidadId(), a.getUnidad() == null ? null : a.getUnidad().getId())) continue;
+
+            // FILTRO POR ENTIDAD
+            if (!ok(r.entidadId(),
+                    a.getUnidad() == null || a.getUnidad().getEntidad() == null
+                            ? null
+                            : a.getUnidad().getEntidad().getId())) {
+                continue;
+            }
+
+            // FILTRO POR UNIDAD
+            if (!ok(r.unidadId(),
+                    a.getUnidad() == null ? null : a.getUnidad().getId())) {
+                continue;
+            }
+
             if (!ok(r.grupoId(), a.getGrupo() == null ? null : a.getGrupo().getId())) continue;
             if (!ok(r.auxiliarId(), a.getAuxiliar() == null ? null : a.getAuxiliar().getId())) continue;
             if (!ok(r.activoId(), a.getId())) continue;
