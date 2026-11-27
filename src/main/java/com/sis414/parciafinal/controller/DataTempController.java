@@ -1,54 +1,70 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.dto.DataTempDto;
-import com.sis414.parciafinal.service.DataTempService;
+import com.sis414.parciafinal.entity.DataTemp;
+import com.sis414.parciafinal.repository.DataTempRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+/** Data: tabla DATA.DBF. La clave es la del DBF (data), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/data")
 @Tag(name = "Localización BD")
 public class DataTempController {
 
-    private final DataTempService service;
+    private final DataTempRepository repository;
 
-    public DataTempController(DataTempService service) {
-        this.service = service;
+    public DataTempController(DataTempRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping
-    @Operation(summary = "DataTemp - Listar")
-    public List<DataTempDto> findAll() {
-        return service.findAll();
+    @Operation(summary = "Data - Listar")
+    public List<DataTemp> findAll() {
+        return repository.findAll();
     }
 
-    @GetMapping("/{id}")
-    @Operation(summary = "DataTemp - Obtener por id")
-    public DataTempDto findById(@PathVariable Long id) {
-        return service.findById(id);
+    @GetMapping("/{data}")
+    @Operation(summary = "Data - Obtener por clave")
+    public DataTemp findByKey(@PathVariable("data") String data) {
+        return repository.findById(data)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Data no encontrado"));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "DataTemp - Nuevo")
-    public DataTempDto create(@RequestBody DataTempDto dto) {
-        return service.create(dto);
+    @Operation(summary = "Data - Nuevo")
+    public DataTemp create(@RequestBody DataTemp body) {
+        if (body.getData() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: data");
+        }
+        if (repository.existsById(body.getData())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Data ya existe");
+        }
+        return repository.save(body);
     }
 
-    @PutMapping("/{id}")
-    @Operation(summary = "DataTemp - Modificar")
-    public DataTempDto update(@PathVariable Long id, @RequestBody DataTempDto dto) {
-        return service.update(id, dto);
+    @PutMapping("/{data}")
+    @Operation(summary = "Data - Modificar")
+    public DataTemp update(@PathVariable("data") String data, @RequestBody DataTemp body) {
+        if (!repository.existsById(data)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Data no encontrado");
+        }
+        body.setData(data);
+        return repository.save(body);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{data}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "DataTemp - Eliminar")
-    public void delete(@PathVariable Long id) {
-        service.delete(id);
+    @Operation(summary = "Data - Eliminar")
+    public void delete(@PathVariable("data") String data) {
+        if (!repository.existsById(data)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Data no encontrado");
+        }
+        repository.deleteById(data);
     }
 }

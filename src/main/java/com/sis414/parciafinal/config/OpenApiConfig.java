@@ -19,7 +19,7 @@ public class OpenApiConfig {
                         .version("3.2")
                         .description("Parcial Final. API REST de las 24 tablas del VSIAF; cada grupo replica un boton del MENU PRINCIPAL."))
                 .tags(List.of(
-                       // new Tag().name("Menú principal").description("SISTEMA DE ACTIVOS FIJOS: ENTIDAD, UNIDAD, BACKUPS, Acerca de..."),
+                       new Tag().name("Menú principal").description("SISTEMA DE ACTIVOS FIJOS: ENTIDAD, UNIDAD, BACKUPS, Acerca de..."),
                         new Tag().name("Activos Fijos").description("ADMINISTRACION DE ACTIVOS FIJOS: Nuevo, Modificar, Duplicar, Transferir, Buscar, Eliminar, Aprobar, Primero/Anterior/Siguiente/Ultimo"),
                         new Tag().name("Grupos y Auxiliares").description("GRUPO CONTABLE: vida util, deprecia, actualiza y auxiliares"),
                         new Tag().name("Oficinas y Responsables").description("OFICINA: oficinas y responsables, Activar / Inactivar"),

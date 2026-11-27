@@ -1,3 +1,4 @@
 package com.sis414.parciafinal.dto;
 
-public record TransferirRequest(Long oficinaId, Long responsableId, String usuar) {}
+/** Nueva oficina y responsable (CODOFIC, CODRESP) del activo transferido. */
+public record TransferirRequest(Integer codOfic, Integer codResp, String usuar) {}

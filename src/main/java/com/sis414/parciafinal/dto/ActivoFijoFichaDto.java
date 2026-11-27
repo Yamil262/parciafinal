@@ -2,9 +2,10 @@ package com.sis414.parciafinal.dto;
 
 import java.math.BigDecimal;
 
-/** Pantalla "ADMINISTRACION DE ACTIVOS FIJOS" tal como se ve en el VSIAF. */
+/** Pantalla "ADMINISTRACION DE ACTIVOS FIJOS": registro de ACTUAL con los nombres de sus tablas relacionadas y el cálculo. */
 public record ActivoFijoFichaDto(
-        Long id,
+        String entidad,
+        String unidad,
         String codigo,
         String codigoAdi,
         Integer incorporacionDia,
@@ -12,11 +13,16 @@ public record ActivoFijoFichaDto(
         Integer incorporacionAno,
         BigDecimal indiceUfv,
         String descripcion,
+        Integer codCont,
         String grupo,
+        Integer codAux,
         String auxiliar,
+        Integer codOfic,
         String oficina,
+        Integer codResp,
         String responsable,
         String cargo,
+        Integer codEstado,
         String estadoActivo,
         String observaciones,
         String idBien,

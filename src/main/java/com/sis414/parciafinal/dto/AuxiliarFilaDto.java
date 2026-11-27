@@ -1,3 +1,3 @@
 package com.sis414.parciafinal.dto;
 
-public record AuxiliarFilaDto(Long id, Integer codigo, String nombre) {}
+public record AuxiliarFilaDto(String entidad, String unidad, Integer codAux, String nomAux) {}

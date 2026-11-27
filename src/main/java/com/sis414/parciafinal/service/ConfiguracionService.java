@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
-/** Guarda la configuracion del sistema (gestion, unidad seleccionada, directorio de la BD) en la tabla ORGUSER. */
+/** Guarda la configuración del sistema (gestión, unidad seleccionada, directorio de la BD) en la tabla ORGUSER. */
 @Service
 public class ConfiguracionService {
 
@@ -24,7 +24,7 @@ public class ConfiguracionService {
 
     @Transactional(readOnly = true)
     public String get(String clave, String porDefecto) {
-        return repository.findByTypeAndIdUser(TIPO, clave)
+        return repository.findById(new OrgUser.Key(TIPO, clave, clave))
                 .map(OrgUser::getData)
                 .filter(s -> !s.isBlank())
                 .orElse(porDefecto);
@@ -32,7 +32,7 @@ public class ConfiguracionService {
 
     @Transactional
     public void set(String clave, String valor) {
-        OrgUser o = repository.findByTypeAndIdUser(TIPO, clave).orElseGet(() -> {
+        OrgUser o = repository.findById(new OrgUser.Key(TIPO, clave, clave)).orElseGet(() -> {
             OrgUser n = new OrgUser();
             n.setType(TIPO);
             n.setIdUser(clave);
@@ -55,12 +55,17 @@ public class ConfiguracionService {
         }
     }
 
+    /** Devuelve {entidad, unidad} de la unidad seleccionada, o null si no hay. */
     @Transactional(readOnly = true)
-    public Long unidadSeleccionadaId() {
-        try {
-            return Long.parseLong(get(UNIDAD, ""));
-        } catch (NumberFormatException e) {
-            return null;
-        }
+    public String[] unidadSeleccionada() {
+        String v = get(UNIDAD, "");
+        int i = v.indexOf('|');
+        if (i < 0) return null;
+        return new String[]{v.substring(0, i), v.substring(i + 1)};
+    }
+
+    @Transactional
+    public void seleccionarUnidad(String entidad, String unidad) {
+        set(UNIDAD, entidad + "|" + unidad);
     }
 }

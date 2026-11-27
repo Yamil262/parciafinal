@@ -24,7 +24,7 @@ public class GenerarReporteController {
 
     @PostMapping
     @Operation(summary = "Reportes (boton Reportes de REPORTES A MEDIDA)",
-            description = "Filtro en null = boton Todos. unidadId null = Consolidado. Sin dia/mes/ano usa hoy.")
+            description = "Filtro en null = boton Todos. entidad/unidad null = Consolidado. Sin dia/mes/ano usa hoy.")
     public ReporteGeneradoDto generar(@RequestBody ReporteGenerarRequest request) {
         return service.generar(request);
     }

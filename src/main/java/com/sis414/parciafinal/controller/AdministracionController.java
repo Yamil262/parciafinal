@@ -1,9 +1,9 @@
 package com.sis414.parciafinal.controller;
 
 import com.sis414.parciafinal.dto.GestionDto;
-import com.sis414.parciafinal.dto.UsuarioDto;
+import com.sis414.parciafinal.entity.Usuario;
+import com.sis414.parciafinal.repository.UsuarioRepository;
 import com.sis414.parciafinal.service.ConfiguracionService;
-import com.sis414.parciafinal.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -19,11 +19,11 @@ import java.util.Map;
 public class AdministracionController {
 
     private final ConfiguracionService configuracion;
-    private final UsuarioService usuarioService;
+    private final UsuarioRepository usuarioRepository;
 
-    public AdministracionController(ConfiguracionService configuracion, UsuarioService usuarioService) {
+    public AdministracionController(ConfiguracionService configuracion, UsuarioRepository usuarioRepository) {
         this.configuracion = configuracion;
-        this.usuarioService = usuarioService;
+        this.usuarioRepository = usuarioRepository;
     }
 
     @GetMapping("/gestion")
@@ -68,8 +68,8 @@ public class AdministracionController {
 
     @GetMapping("/seguridad")
     @Operation(summary = "Seguridad (usuarios del sistema)")
-    public List<UsuarioDto> seguridad() {
-        return usuarioService.findAll();
+    public List<Usuario> seguridad() {
+        return usuarioRepository.findAll();
     }
 
     @PostMapping("/reindexar")

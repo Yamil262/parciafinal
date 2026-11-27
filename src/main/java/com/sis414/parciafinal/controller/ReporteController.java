@@ -1,54 +1,71 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.dto.ReporteDto;
-import com.sis414.parciafinal.service.ReporteService;
+import com.sis414.parciafinal.entity.Reporte;
+import com.sis414.parciafinal.repository.ReporteRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+/** Reporte: tabla REPORTS.DBF. La clave es la del DBF (reportName, modType), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/reportes")
 @Tag(name = "Generar Reportes")
 public class ReporteController {
 
-    private final ReporteService service;
+    private final ReporteRepository repository;
 
-    public ReporteController(ReporteService service) {
-        this.service = service;
+    public ReporteController(ReporteRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping
     @Operation(summary = "Reporte - Listar")
-    public List<ReporteDto> findAll() {
-        return service.findAll();
+    public List<Reporte> findAll() {
+        return repository.findAll();
     }
 
-    @GetMapping("/{id}")
-    @Operation(summary = "Reporte - Obtener por id")
-    public ReporteDto findById(@PathVariable Long id) {
-        return service.findById(id);
+    @GetMapping("/{reportName}/{modType}")
+    @Operation(summary = "Reporte - Obtener por clave")
+    public Reporte findByKey(@PathVariable("reportName") String reportName, @PathVariable("modType") String modType) {
+        return repository.findById(new Reporte.Key(reportName, modType))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Reporte no encontrado"));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Reporte - Nuevo")
-    public ReporteDto create(@RequestBody ReporteDto dto) {
-        return service.create(dto);
+    public Reporte create(@RequestBody Reporte body) {
+        if (body.getReportName() == null || body.getModType() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: reportName, modType");
+        }
+        if (repository.existsById(new Reporte.Key(body.getReportName(), body.getModType()))) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Reporte ya existe");
+        }
+        return repository.save(body);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{reportName}/{modType}")
     @Operation(summary = "Reporte - Modificar")
-    public ReporteDto update(@PathVariable Long id, @RequestBody ReporteDto dto) {
-        return service.update(id, dto);
+    public Reporte update(@PathVariable("reportName") String reportName, @PathVariable("modType") String modType, @RequestBody Reporte body) {
+        if (!repository.existsById(new Reporte.Key(reportName, modType))) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Reporte no encontrado");
+        }
+        body.setReportName(reportName);
+        body.setModType(modType);
+        return repository.save(body);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{reportName}/{modType}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(summary = "Reporte - Eliminar")
-    public void delete(@PathVariable Long id) {
-        service.delete(id);
+    public void delete(@PathVariable("reportName") String reportName, @PathVariable("modType") String modType) {
+        if (!repository.existsById(new Reporte.Key(reportName, modType))) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Reporte no encontrado");
+        }
+        repository.deleteById(new Reporte.Key(reportName, modType));
     }
 }

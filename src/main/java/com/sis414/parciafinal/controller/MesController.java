@@ -1,54 +1,70 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.dto.MesDto;
-import com.sis414.parciafinal.service.MesService;
+import com.sis414.parciafinal.entity.Mes;
+import com.sis414.parciafinal.repository.MesRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+/** Mes: tabla MES.DBF. La clave es la del DBF (mes), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/meses")
 @Tag(name = "Activos Fijos")
 public class MesController {
 
-    private final MesService service;
+    private final MesRepository repository;
 
-    public MesController(MesService service) {
-        this.service = service;
+    public MesController(MesRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping
     @Operation(summary = "Mes - Listar")
-    public List<MesDto> findAll() {
-        return service.findAll();
+    public List<Mes> findAll() {
+        return repository.findAll();
     }
 
-    @GetMapping("/{id}")
-    @Operation(summary = "Mes - Obtener por id")
-    public MesDto findById(@PathVariable Long id) {
-        return service.findById(id);
+    @GetMapping("/{mes}")
+    @Operation(summary = "Mes - Obtener por clave")
+    public Mes findByKey(@PathVariable("mes") Integer mes) {
+        return repository.findById(mes)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Mes no encontrado"));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Mes - Nuevo")
-    public MesDto create(@RequestBody MesDto dto) {
-        return service.create(dto);
+    public Mes create(@RequestBody Mes body) {
+        if (body.getMes() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: mes");
+        }
+        if (repository.existsById(body.getMes())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Mes ya existe");
+        }
+        return repository.save(body);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{mes}")
     @Operation(summary = "Mes - Modificar")
-    public MesDto update(@PathVariable Long id, @RequestBody MesDto dto) {
-        return service.update(id, dto);
+    public Mes update(@PathVariable("mes") Integer mes, @RequestBody Mes body) {
+        if (!repository.existsById(mes)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Mes no encontrado");
+        }
+        body.setMes(mes);
+        return repository.save(body);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{mes}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(summary = "Mes - Eliminar")
-    public void delete(@PathVariable Long id) {
-        service.delete(id);
+    public void delete(@PathVariable("mes") Integer mes) {
+        if (!repository.existsById(mes)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Mes no encontrado");
+        }
+        repository.deleteById(mes);
     }
 }

@@ -1,54 +1,72 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.dto.RevalorizacionDto;
-import com.sis414.parciafinal.service.RevalorizacionService;
+import com.sis414.parciafinal.entity.Revalorizacion;
+import com.sis414.parciafinal.repository.RevalorizacionRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+/** Revalorización: tabla REVAL.DBF. La clave es la del DBF (entidad, unidad, codigo), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/revalorizaciones")
 @Tag(name = "Activos Fijos")
 public class RevalorizacionController {
 
-    private final RevalorizacionService service;
+    private final RevalorizacionRepository repository;
 
-    public RevalorizacionController(RevalorizacionService service) {
-        this.service = service;
+    public RevalorizacionController(RevalorizacionRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping
-    @Operation(summary = "Revalorizacion - Listar")
-    public List<RevalorizacionDto> findAll() {
-        return service.findAll();
+    @Operation(summary = "Revalorización - Listar")
+    public List<Revalorizacion> findAll() {
+        return repository.findAll();
     }
 
-    @GetMapping("/{id}")
-    @Operation(summary = "Revalorizacion - Obtener por id")
-    public RevalorizacionDto findById(@PathVariable Long id) {
-        return service.findById(id);
+    @GetMapping("/{entidad}/{unidad}/{codigo}")
+    @Operation(summary = "Revalorización - Obtener por clave")
+    public Revalorizacion findByKey(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad, @PathVariable("codigo") String codigo) {
+        return repository.findById(new Revalorizacion.Key(entidad, unidad, codigo))
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Revalorización no encontrado"));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Revalorizacion - Nuevo")
-    public RevalorizacionDto create(@RequestBody RevalorizacionDto dto) {
-        return service.create(dto);
+    @Operation(summary = "Revalorización - Nuevo")
+    public Revalorizacion create(@RequestBody Revalorizacion body) {
+        if (body.getEntidad() == null || body.getUnidad() == null || body.getCodigo() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: entidad, unidad, codigo");
+        }
+        if (repository.existsById(new Revalorizacion.Key(body.getEntidad(), body.getUnidad(), body.getCodigo()))) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Revalorización ya existe");
+        }
+        return repository.save(body);
     }
 
-    @PutMapping("/{id}")
-    @Operation(summary = "Revalorizacion - Modificar")
-    public RevalorizacionDto update(@PathVariable Long id, @RequestBody RevalorizacionDto dto) {
-        return service.update(id, dto);
+    @PutMapping("/{entidad}/{unidad}/{codigo}")
+    @Operation(summary = "Revalorización - Modificar")
+    public Revalorizacion update(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad, @PathVariable("codigo") String codigo, @RequestBody Revalorizacion body) {
+        if (!repository.existsById(new Revalorizacion.Key(entidad, unidad, codigo))) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Revalorización no encontrado");
+        }
+        body.setEntidad(entidad);
+        body.setUnidad(unidad);
+        body.setCodigo(codigo);
+        return repository.save(body);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{entidad}/{unidad}/{codigo}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Revalorizacion - Eliminar")
-    public void delete(@PathVariable Long id) {
-        service.delete(id);
+    @Operation(summary = "Revalorización - Eliminar")
+    public void delete(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad, @PathVariable("codigo") String codigo) {
+        if (!repository.existsById(new Revalorizacion.Key(entidad, unidad, codigo))) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Revalorización no encontrado");
+        }
+        repository.deleteById(new Revalorizacion.Key(entidad, unidad, codigo));
     }
 }

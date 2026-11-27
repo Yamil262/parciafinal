@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CuentaPartidaRepository extends JpaRepository<CuentaPartida, Long> {
+public interface CuentaPartidaRepository extends JpaRepository<CuentaPartida, CuentaPartida.Key> {
 }

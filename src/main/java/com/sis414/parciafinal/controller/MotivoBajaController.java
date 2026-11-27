@@ -1,54 +1,70 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.dto.MotivoBajaDto;
-import com.sis414.parciafinal.service.MotivoBajaService;
+import com.sis414.parciafinal.entity.MotivoBaja;
+import com.sis414.parciafinal.repository.MotivoBajaRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+/** Motivo de baja: tabla BAJA.DBF. La clave es la del DBF (codBaja), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/motivos-baja")
 @Tag(name = "Activos Fijos")
 public class MotivoBajaController {
 
-    private final MotivoBajaService service;
+    private final MotivoBajaRepository repository;
 
-    public MotivoBajaController(MotivoBajaService service) {
-        this.service = service;
+    public MotivoBajaController(MotivoBajaRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping
-    @Operation(summary = "MotivoBaja - Listar")
-    public List<MotivoBajaDto> findAll() {
-        return service.findAll();
+    @Operation(summary = "Motivo de baja - Listar")
+    public List<MotivoBaja> findAll() {
+        return repository.findAll();
     }
 
-    @GetMapping("/{id}")
-    @Operation(summary = "MotivoBaja - Obtener por id")
-    public MotivoBajaDto findById(@PathVariable Long id) {
-        return service.findById(id);
+    @GetMapping("/{codBaja}")
+    @Operation(summary = "Motivo de baja - Obtener por clave")
+    public MotivoBaja findByKey(@PathVariable("codBaja") Integer codBaja) {
+        return repository.findById(codBaja)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Motivo de baja no encontrado"));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "MotivoBaja - Nuevo")
-    public MotivoBajaDto create(@RequestBody MotivoBajaDto dto) {
-        return service.create(dto);
+    @Operation(summary = "Motivo de baja - Nuevo")
+    public MotivoBaja create(@RequestBody MotivoBaja body) {
+        if (body.getCodBaja() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: codBaja");
+        }
+        if (repository.existsById(body.getCodBaja())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Motivo de baja ya existe");
+        }
+        return repository.save(body);
     }
 
-    @PutMapping("/{id}")
-    @Operation(summary = "MotivoBaja - Modificar")
-    public MotivoBajaDto update(@PathVariable Long id, @RequestBody MotivoBajaDto dto) {
-        return service.update(id, dto);
+    @PutMapping("/{codBaja}")
+    @Operation(summary = "Motivo de baja - Modificar")
+    public MotivoBaja update(@PathVariable("codBaja") Integer codBaja, @RequestBody MotivoBaja body) {
+        if (!repository.existsById(codBaja)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Motivo de baja no encontrado");
+        }
+        body.setCodBaja(codBaja);
+        return repository.save(body);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{codBaja}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "MotivoBaja - Eliminar")
-    public void delete(@PathVariable Long id) {
-        service.delete(id);
+    @Operation(summary = "Motivo de baja - Eliminar")
+    public void delete(@PathVariable("codBaja") Integer codBaja) {
+        if (!repository.existsById(codBaja)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Motivo de baja no encontrado");
+        }
+        repository.deleteById(codBaja);
     }
 }

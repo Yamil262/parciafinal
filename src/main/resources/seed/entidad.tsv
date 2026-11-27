@@ -1,0 +1,643 @@
+gestion	codigo	descEnt	siglaEnt	sectorEnt	subsecEnt	areaEnt	subareaEnt	nivelInst
+2015	0	.	.	2	1	0	0	0
+2015	6	Vicepresidencia del Estado Plurinacional	VPEP	1	1	1	2	0
+2015	10	Ministerio de Relaciones Exteriores	MIN-RREE	1	1	1	2	0
+2015	15	Ministerio de Gobierno	MIN-GOB	1	1	1	2	0
+2015	16	Ministerio de Educación	MIN-EDU	1	1	1	2	0
+2015	20	Ministerio de Defensa	MIN-DEF	1	1	1	2	0
+2015	25	Ministerio de la Presidencia	MIN-PRES	1	1	1	2	0
+2015	30	Ministerio de Justicia y Transparencia Institucional	MIN-JUST	1	1	1	2	0
+2015	35	Ministerio de Economía y Finanzas Públicas	MIN-EFP	1	1	1	2	0
+2015	41	Ministerio de Desarrollo Productivo y Economía Plural	MIN-DPEP	1	1	1	2	0
+2015	46	Ministerio de Salud y Deportes	MIN-SAL	1	1	1	2	0
+2015	47	Ministerio de Desarrollo Rural y Tierras	MIN-DRT	1	1	1	2	0
+2015	48	Ministerio de Deportes	MIN-DEP	1	1	1	2	0
+2015	50	Min de Transparencia Inst. y Lucha Contra la Corrupción	MIN-TILCC	1	1	1	2	0
+2015	51	Ministerio de Autonomias	MIN-AUT	1	1	1	2	0
+2015	52	Ministerio de Culturas y Turismo	MIN-CULT	1	1	1	2	0
+2015	66	Ministerio de Planificación del Desarrollo	MIN-PD	1	1	1	2	0
+2015	70	Ministerio de Trabajo, Empleo y Previsión Social	MIN-TEPS	1	1	1	2	0
+2015	76	Ministerio de Minería y Metalurgia	MIN-MM	1	1	1	2	0
+2015	78	Ministerio de Hidrocarburos y Energías	MIN-HE	1	1	1	2	0
+2015	80	Ministerio de Defensa Legal del Estado	MIN-DLE	1	1	1	2	0
+2015	81	Ministerio de Obras Públicas, Servicios y Vivienda	MIN-OPSV	1	1	1	2	0
+2015	85	MINISTERIO DE ENERGIAS	MIN-ENER	1	1	1	2	0
+2015	86	Ministerio de Medio Ambiente y Agua	MIN-MAA	1	1	1	2	0
+2015	87	Ministerio de Comunicación	MIN-COM	1	1	1	2	0
+2015	95	Consejo Supremo de Defensa Plurinacional	COSDEP	1	1	1	2	0
+2015	99	Tesoro General de la Nación	TGN	1	1	1	2	0
+2015	108	Orquesta Sinfónica Nacional	OSN	1	1	3	1	0
+2015	109	Conservatorio Plurinacional de Música	COPLUMU	1	1	3	1	0
+2015	111	Instituto Boliviano de la Ceguera	IBC	1	1	3	1	0
+2015	112	Comité Nacional de la Persona con Discapacidad	CONALPEDIS	1	1	3	1	0
+2015	113	Fondo de Inversión para el Deporte	FID	1	1	3	1	0
+2015	115	Inst. Boliviano del Dep. la Educ. Física y la Recreación	IBDEFR	1	1	3	1	0
+2015	117	Dirección General de Aeronáutica Civil	DGAC	1	1	3	1	0
+2015	119	Agencia para el Des. de la Soc. de la Información en Bolivia	ADSIB	1	1	3	1	0
+2015	121	Instituto Boliviano de Ciencia y Tecnología Nuclear	IBTEN	1	1	3	1	0
+2015	124	Academia Nacional de Ciencias	ANC	1	1	3	1	0
+2015	129	Escuela de Gestión Pública Plurinacional	EGPP	1	1	3	1	0
+2015	130	Fondo de Financiamiento para la Minería	FOFIM	1	2	1	1	0
+2015	132	Servicio de Desarrollo de las Empresas Púb. Productivas	SEDEM	1	1	3	1	0
+2015	133	Lotería Nacional de Beneficencia y Salubridad	LONABOL	1	1	3	1	0
+2015	134	Consejo Nacional de Vivienda Policial	COVIPOL	1	1	3	1	0
+2015	137	Comité Ejecutivo de la Universidad Boliviana	CEUB	1	1	3	1	0
+2015	138	Universidad Mayor Real y Pontificia de San Francisco Xavier	UMSFX	1	1	4	0	0
+2015	139	Universidad Mayor de San Andrés	UMSA	1	1	4	0	0
+2015	140	Universidad Pública de El Alto	UPEA	1	1	4	0	0
+2015	141	Universidad Mayor de San Simón	UMSS	1	1	4	0	0
+2015	142	Universidad Técnica de Oruro	UTO	1	1	4	0	0
+2015	143	Universidad Autónoma Tomás Frías	UATF	1	1	4	0	0
+2015	144	Universidad Nacional Siglo XX	UNSXX	1	1	4	0	0
+2015	145	Universidad Autónoma Juan Misael Saracho	UAJMS	1	1	4	0	0
+2015	146	Universidad Autónoma Gabriel René Moreno	UAGRM	1	1	4	0	0
+2015	147	Universidad Autónoma del Beni José  Ballivián	UTB	1	1	4	0	0
+2015	148	Universidad Amazónica de Pando	UAP	1	1	4	0	0
+2015	149	Consejo Nacional del Cine	CONACINE	1	1	3	1	0
+2015	150	Proyecto Sucre Ciudad Universitaria	PSCU	1	1	3	1	0
+2015	152	Servicio Plurinacional de Defensa Pública	SEPDEP	1	1	3	1	0
+2015	153	Observatorio Plurinacional de la Calidad  Educativa	OPCE	1	1	3	1	0
+2015	154	Museo Nacional de Historia Natural	MNHN	1	1	3	1	0
+2015	155	Dirección del Notariado Plurinacional	DIRNOPLU	1	1	3	1	0
+2015	156	Servicio Plurinacional de Asistencia a la Víctima	SEPDAVI	1	1	3	1	0
+2015	157	Servicio para la Prevención de la Tortura	SEPRET	1	1	3	1	0
+2015	159	OficinaTécnica para el Fortalecimiento de la Empresa Pública	OFEP	1	1	3	1	0
+2015	163	Agencia Nacional de Hidrocarburos	ANH	1	1	3	1	0
+2015	169	Autoridad General de Impugnación Tributaria	AGIT	1	1	3	1	0
+2015	170	Escuela Militar de Ingeniería	EMI	1	1	3	1	0
+2015	171	Centro de Investigación Agrícola Tropical	CIAT	1	1	3	2	0
+2015	188	Complejo Indus. de los Rec.Evaporíticos del Salar de Uyuni	CIRESU	1	1	3	1	0
+2015	190	Autoridad Jurisdiccional Administrativa Minera	AGJAM	1	1	3	1	0
+2015	192	Servicio al Mejoramiento de la Navegación Amazónica	SEMENA	1	1	3	1	0
+2015	197	Dirección Estratégica de Reivindicación Marítima	DIREMAR	1	1	3	1	0
+2015	200	Registro Único para la Administración Tributaria Municipal	RUAT	1	1	3	1	0
+2015	201	Agencia para el Des. de las Macroreg. y Zonas Fronterizas	ADEMAF	1	1	3	1	0
+2015	203	Autoridad de Supervisión del Sistema Financiero	ASFI	1	1	3	1	0
+2015	206	Instituto Nacional de Estadística	INE	1	1	3	1	0
+2015	209	Administración de Servicios Portuarios - Bolivia	ASP- B	1	1	3	1	0
+2015	210	Unidad de Análisis de Políticas Sociales y Económicas	UDAPE	1	1	3	1	0
+2015	212	Instituto Nacional de Reforma Agraria	INRA	1	1	3	1	0
+2015	213	Servicio Nacional de Meteorología e Hidrología	SENAMHI	1	1	3	1	0
+2015	221	Serv. Nal. de Reg. y Control de la Comer. de Minerales y Metales	SENARECOM	1	1	3	1	0
+2015	222	Instituto Nacional de Innovación Agropecuaria y Forestal	INIAF	1	1	3	1	0
+2015	223	Fondo Nacional de Desarrollo Forestal	FONABOSQUE	1	1	3	1	0
+2015	224	Insumos Bolivia	IN - BOL	1	1	3	1	0
+2015	225	Serv. Nal. para la Sostenibilidad en Saneamiento Básico	SENASBA	1	1	3	1	0
+2015	226	Servicio Estatal de Autonomías	SEA	1	1	3	1	0
+2015	227	Zona Franca Comercial e Industrial de Cobija	ZOFRACOBIJA	1	1	3	1	0
+2015	234	Servicio Geológico Minero	SERGEOMIN	1	1	3	1	0
+2015	242	Comando de Ingeniería del Ejército	CO-ING	1	1	3	1	0
+2015	243	Servicio Nacional de Hidrografía Naval	SNHN	1	1	3	1	0
+2015	244	Servicio Nacional de Aerofotogrametría	SNAF	1	1	3	1	0
+2015	245	Servicio Geodésico de Mapas	SE-GEOMAP	1	1	3	1	0
+2015	247	Corporación Gestora del Proyecto Abapo - Izozog	CORGEPAI	1	1	3	1	0
+2015	248	Centro de Investigación y Desarrollo Acuícola Boliviano	CIDAB	1	1	3	1	0
+2015	249	Central de Abastecimiento y Suministros de Salud	CEASS	1	1	3	1	0
+2015	250	Fondo de Des. para los Pueblos Indígenas, Orig. y Com. Camp.	FDPPIOYCC	1	1	3	1	0
+2015	251	Instituto Nacional de Salud Ocupacional	INSO	1	1	3	1	0
+2015	253	Entidad Ejecutora de Medio Ambiente y Agua	EMAGUA	1	1	3	1	0
+2015	254	Instituto del Seguro Agrario	INSA	1	1	3	1	0
+2015	265	Direc. Dptal. de Educación  Chuquisaca	DDE-CHU	1	1	3	1	0
+2015	266	Direc. Dptal. de Educación La Paz	DDE-LPZ	1	1	3	1	0
+2015	267	Direc. Dptal. de Educación Cochabamba	DDE-CBB	1	1	3	1	0
+2015	268	Direc. Dptal. de Educación Oruro	DDE-ORU	1	1	3	1	0
+2015	269	Direc. Dptal. de Educación Potosí	DDE-PTS	1	1	3	1	0
+2015	270	Direc. Dptal. de Educación Tarija	DDE-TAR	1	1	3	1	0
+2015	271	Direc. Dptal. de Educación Santa Cruz	DDE-SCZ	1	1	3	1	0
+2015	272	Direc. Dptal. de Educación Beni	DDE-BEN	1	1	3	1	0
+2015	273	Direc. Dptal. de Educación Pando	DDE-PAN	1	1	3	1	0
+2015	281	Oficina Técnica Nacional de los Ríos Pilcomayo y Bermejo	OTNR-PB	1	1	3	1	0
+2015	283	Aduana Nacional	AN	1	1	3	1	0
+2015	287	Fondo Nacional de Inversión Productiva y Social	FPS	1	1	3	1	0
+2015	288	Servicio Nacional de Riego	SENARI	1	1	3	1	0
+2015	289	Mutual de Seguros del Policía	MUSEPOL	1	1	3	1	0
+2015	290	Servicio de Impuestos Nacionales	SIN	1	1	3	1	0
+2015	291	Administradora Boliviana de Carreteras	ABC	1	1	3	1	0
+2015	292	Vías Bolivia	VOBO	1	1	3	1	0
+2015	293	Fundación Cultural del Banco Central de Bolivia	FC - BCB	1	1	3	1	0
+2015	294	Univ. Indígena Bol. Comun. Intercultl Prod. Tupak Katari	UNIBOL-TK	1	1	4	0	0
+2015	295	Univ. Indígena Bol. Comun. Intercult Prod. Casimiro Huanca	UNIBOL-CH	1	1	4	0	0
+2015	296	Univ. Indígena Bol. Comun. Intercult Prod. Apiaguaiki Tupa	UNIBOL-AT	1	1	4	0	0
+2015	297	Servicio Nacional de Caminos Residual	SNC-R	1	1	3	1	0
+2015	298	Servicio Departamental de Riego - Chuquisaca	SEDERI-CHU	1	1	3	1	0
+2015	299	Servicio Departamental de Riego - La Paz	SEDERI-LPZ	1	1	3	1	0
+2015	300	Servicio Departamental de Riego - Cochabamba	SEDERI-CBB	1	1	3	1	0
+2015	301	Servicio Departamental de Riego - Oruro	SEDERI-ORU	1	1	3	1	0
+2015	302	Servicio Departamental de Riego - Potosí	SEDERI-PTS	1	1	3	1	0
+2015	303	Servicio Departamental de Riego - Tarija	SEDERI-TAR	1	1	3	1	0
+2015	304	Servicio Departamental de Riego - Santa Cruz	SEDERI-SCZ	1	1	3	1	0
+2015	305	Servicio Departamental de Riego - Beni	SEDERI-BEN	1	1	3	1	0
+2015	306	Servicio Departamental de Riego - Pando	SEDERI-PAN	1	1	3	1	0
+2015	309	Autoridad de Fiscalización del Juego	AJ	1	1	3	1	0
+2015	310	Autoridad de Regulación y Fiscalización de Telecomunicaciones y Transportes	ATT	1	1	3	1	0
+2015	311	Autoridad de Fisc y Ctrol Soc de Agua Potable Saneam.Básico	AAPS	1	1	3	1	0
+2015	312	Autoridad de Fiscalizac. y Control Soc de Bosques y Tierras	ABT	1	1	3	1	0
+2015	313	Autoridad de Fiscalización y Control de Pensiones y Seguros - APS	APS	1	1	3	1	0
+2015	314	Autoridad de Fiscalización y Control Social de Electricidad	AE	1	1	3	1	0
+2015	315	Autoridad de Fiscalización de Empresas	AEMP	1	1	3	1	0
+2015	324	Escuela Boliviana Intercultural de Música	EBIM	1	1	3	1	0
+2015	340	Servicio General de Identificación Personal	SEGIP	1	1	3	1	0
+2015	341	Servicio General de Licencias de Conducir	SEGELIC	1	1	3	1	0
+2015	342	Agencia Estatal de Vivienda	AEVIVIENDA	1	1	3	1	0
+2015	343	Escuela de Jueces del Estado	EJE	1	1	3	1	0
+2015	344	Instituto Plurinacional de Estudio de Lenguas y Culturas	IPELC	1	1	3	1	0
+2015	345	Mutual de Servicios al Policía	MUSERPOL	1	1	3	1	0
+2015	346	Unidad de Investigaciones Financieras	UIF	1	1	3	1	0
+2015	347	Autoridad de Fiscalización y Control de Cooperativas	AFCOOP	1	1	3	1	0
+2015	348	Autoridad Plurinacional de la Madre Tierra	APMT	1	1	3	1	0
+2015	349	Centro de Inv.Arqueológicas,Antropológicas y Adm.de Tiwanaku	CIAAAT	1	1	3	1	0
+2015	371	Centro Internacional de la Quinua	CIQ	1	1	3	1	0
+2015	372	Unidad de Liquidación Fondo de Des.para Pueblos Indígenas, Originarios y Comun.Camp.	ULFDPPIOYCC	1	1	3	1	0
+2015	373	Fondo de Desarrollo Indigena	FDI	1	1	3	1	0
+2015	374	Agencia de Gobierno Electrónico y Tecnologías de Información y Comunicación	AGETIC	1	1	3	1	0
+2015	375	Comité Organizador de los XI Juegos Suramericanos Cochabamba 2018	CODESUR	1	1	3	1	0
+2015	376	AGENCIA BOLIVIANA DE ENERGIA NUCLEAR	ABEN	1	1	3	1	0
+2015	377	DIR. ESTRG. DE LA DEFENSA DE LOS MANATIALES DEL SILALA Y TODOS LOS REC. HIDRICOS EN FRONTERA CON LA REP. DE CH	DIRESILALA	1	1	3	1	0
+2015	378	SERVICIO NACIONAL TEXTIL	SENATEX	1	1	3	1	0
+2015	380	Autoridad de Fiscalización y Control del Sistema Nacional de Salud	ASINSA	1	1	3	1	0
+2015	382	Agencia de Infraestructura en Salud y Equipamiento Médico	AISEM	1	1	3	1	0
+2015	383	Agencia Boliviana de Correos "Correos de Bolivia"	COBOL	1	1	3	1	0
+2015	411	Corporación del Seguro Social Militar	COSSMIL	1	1	5	0	0
+2015	417	Caja Nacional de Salud	CNS	1	1	5	0	0
+2015	418	Caja Petrolera de Salud	CPS	1	1	5	0	0
+2015	422	Caja Bancaria Estatal de Salud	CBES	1	1	5	0	0
+2015	423	Caja de Salud del Servicio Nal. de Caminos y Ramas Anexas	CSSNCRA	1	1	5	0	0
+2015	424	Caja de Salud CORDES	CORDES	1	1	5	0	0
+2015	425	Seguro Social Universitario de Cochabamba	SSUCBBA	1	1	5	0	0
+2015	426	Seguro Social Universitario de Oruro	SSUORU	1	1	5	0	0
+2015	427	Seguro Social Universitario de Santa Cruz	SSUSTCRUZ	1	1	5	0	0
+2015	428	Seguro Social Universitario de Sucre	SSUSUC	1	1	5	0	0
+2015	429	Seguro Social Universitario de La Paz	SSULPZ	1	1	5	0	0
+2015	432	Seguro Social Universitario de Tarija	SSUTAR	1	1	5	0	0
+2015	433	Seguro Social Universitario de Potosí	SSUPTS	1	1	5	0	0
+2015	434	Seguro Social Universitario de Beni	SSUBENI	1	1	5	0	0
+2015	435	Seguro Integral de Salud	SINEC	1	1	5	0	0
+2015	512	Adm.de Aeropuertos y Servicios Auxiliares a la Naveg. Aérea	AASANA	1	1	3	1	0
+2015	513	Yacimientos Petrolíferos Fiscales Bolivianos	YPFB	1	1	6	1	0
+2015	514	Empresa Nacional de Electricidad	ENDE	1	1	6	1	0
+2015	517	Corporación Minera de Bolivia	COMIBOL	1	1	6	1	0
+2015	520	Empresa Metalúrgica VINTO - Nacionalizada	VINTO - NAL	1	1	6	1	0
+2015	522	Empresa Nacional de Ferrocarriles - Residual	ENFE	1	1	6	1	0
+2015	523	Empresa de Correos de Bolivia	ECOBOL	1	1	6	1	0
+2015	525	Transportes Aéreos Bolivianos	TAB	1	1	6	1	0
+2015	526	Bolivia TV	BTV	1	1	6	1	0
+2015	548	Corporación de las Fuerzas Armadas p/ el Des. Nacional	COFADENA	1	1	6	1	0
+2015	551	Empresa Naviera Boliviana	ENABOL	1	1	6	1	0
+2015	572	Empresa de Apoyo a la Producción de Alimentos	EMAPA	1	1	6	1	0
+2015	573	Empresa Siderúrgica del Mutún	ES - MUTUN	1	1	6	1	0
+2015	574	Lácteos de Bolivia	LACTEOSBOL	1	1	6	1	0
+2015	575	Papeles de Bolivia	PAPELBOL	1	1	6	1	0
+2015	576	Cartones de Bolivia	CARTONBOL	1	1	6	1	0
+2015	578	Boliviana de Aviación	BOA	1	1	6	1	0
+2015	579	Empresa Púb. Nal. Estratégica Cementos de Bolivia	ECEBOL	1	1	6	1	0
+2015	580	Depósitos Aduaneros Bolivianos	DAB	1	1	6	1	0
+2015	581	Empresa Púb. Nal. Estratégica Azúcar de Bolivia - Bermejo	AZUCARBOL	1	1	6	1	0
+2015	582	Empresa Boliviana de Almendras y Derivados	EBA	1	1	6	1	0
+2015	584	Empresa Boliviana de Industrializacion de Hidrocarburos	EBIH	1	1	6	1	0
+2015	585	Agencia Boliviana Espacial	ABE.	1	1	6	1	0
+2015	586	Empresa Azucarera San Buenaventura	EASBA	1	1	6	1	0
+2015	587	Empresa Estratégica Boliviana de Construcción y Conservación de Infraestructura Civil	EBC	1	1	6	1	0
+2015	588	Empresa Pública Nacional Textil	ENATEX	1	1	6	1	0
+2015	589	Empresa de Construcciones del Ejército	ECE	1	1	6	1	0
+2015	590	Empresa Pública	QUIPUS	0	0	1	1	6
+2015	591	Empresa Estatal de Transporte por Cable Mi Teleférico	MITELEF	1	1	6	1	0
+2015	592	Empresa Estatal Boliviana de Turismo	BOLTUR	1	1	6	1	0
+2015	593	Empresa Pública YACANA	YACANA	1	1	6	1	0
+2015	594	Administración de Servicios Portuarios - Bolivia	ASP-B	1	1	6	1	0
+2015	595	GESTORA PUBLICA DE LA SEGURIDAD SOCIAL DE LARGO PLAZO	GESTORA	1	1	6	1	0
+2015	596	Empresa Pública Transporte Aéreo Militar	TAM	1	1	6	1	0
+2015	597	Empresa Pública Nacional Estratégica de Yacimientos de Litio Bolivianos	YLB	1	1	6	1	0
+2015	598	Empresa Pública Editorial del Estado Plurinacional de Bolivia	EDITORIAL	1	1	6	1	0
+2015	620	Complejo Agroindustrial de San Buena Aventura	CAISB	1	1	6	2	0
+2015	633	Empresa Misicuni	MISICUNI	1	1	6	2	0
+2015	634	Empresa Púb. Deptal. Hotel Terminal-Terminal de Buses Oruro	EPDEOR	1	1	6	4	0
+2015	650	Asamblea Legislativa Plurinacional	ALP	1	1	1	1	0
+2015	660	Órgano Judicial	OJ	1	1	1	3	0
+2015	661	Tribunal Constitucional Plurinacional	TCP	1	1	1	3	0
+2015	670	Órgano Electoral Plurinacional	OEP	1	1	1	4	0
+2015	680	Contraloria General del Estado	CGE	1	1	2	0	0
+2015	681	Ministerio Público	MINPUB	1	1	2	0	0
+2015	682	Defensoría del Pueblo	DP	1	1	2	0	0
+2015	683	Procuraduría General del Estado	PROGE	1	1	2	0	0
+2015	716	Empresa Tarijeña del Gas	EMTAGAS	1	1	6	2	0
+2015	718	Complejo Agroindustrial Buena Vista	CABV	1	1	6	1	0
+2015	761	Servicio Autónomo Municipal de Agua Potable y Alcantarillado	SAMAPA	1	1	6	3	0
+2015	781	Servicio Municipal de Agua Potable y Alcantarillado	SEMAPA	1	1	6	3	0
+2015	802	Empresa Local de Agua Potable y Alcantarillado Sucre	ELAPAS	1	1	6	3	0
+2015	821	Administración Autónoma para Obras Sanitarias - Potosí	AAPOS	1	1	6	3	0
+2015	831	Servicio Local de Acueductos y Alcantarillado - Oruro	SELA	1	1	6	3	0
+2015	862	Fondo Nacional de Desarrollo Regional	FNDR	1	2	1	1	0
+2015	865	Fondo de Desarrollo del Sist.Fin. y Apoyo al Sec.Productivo	FONDESIF	1	2	1	1	0
+2015	866	Directorio Unico de Fondos	DUF	1	2	1	1	0
+2015	867	Fondo Rotatorio de Fomento Productivo Regional	FRFPR	1	2	1	3	0
+2015	901	Gobierno Autónomo Departamental de Chuquisaca	GAD-CHU	1	1	7	1	0
+2015	902	Gobierno Autónomo Departamental de La Paz	GAD-LPZ	1	1	7	1	0
+2015	903	Gobierno Autónomo Departamental de Cochabamba	GAD-CBB	1	1	7	1	0
+2015	904	Gobierno Autónomo Departamental de Oruro	GAD-ORU	1	1	7	1	0
+2015	905	Gobierno Autónomo Departamental de Potosí	GAD-PTS	1	1	7	1	0
+2015	906	Gobierno Autónomo Departamental de Tarija	GAD-TAR	1	1	7	1	0
+2015	907	Gobierno Autónomo Departamental de Santa Cruz	GAD-SCZ	1	1	7	1	0
+2015	908	Gobierno Autónomo Departamental del Beni	GAD-BEN	1	1	7	1	0
+2015	909	Gobierno Autónomo Departamental de Pando	GAD-PAN	1	1	7	1	0
+2015	950	Banco Vivienda	BANVI	1	2	2	0	0
+2015	951	Banco Central de Bolivia	BCB	1	2	2	0	0
+2015	999	Sector Privado	SEC-PRV	2	1	0	0	0
+2015	1101	Gobierno Autónomo Municipal de Sucre	SUC	1	1	7	3	0
+2015	1102	Gobierno Autónomo Municipal de Yotala	YOT	1	1	7	3	0
+2015	1103	Gobierno Autónomo Municipal de Poroma	POR	1	1	7	3	0
+2015	1104	Gobierno Autónomo Municipal de Villa Azurduy	AZU	1	1	7	3	0
+2015	1105	Gobierno Autónomo Municipal de Tarvita (Villa Orías)	TAR	1	1	7	3	0
+2015	1106	Gobierno Autónomo Municipal de Villa Zudañez (Tacopaya)	ZUD	1	1	7	3	0
+2015	1107	Gobierno Autónomo Municipal de Presto	PRE	1	1	7	3	0
+2015	1108	Gobierno Autónomo Municipal de Villa Mojocoya	VMO	1	1	7	3	0
+2015	1109	Gobierno Autónomo Municipal de Icla	MUJ	1	1	7	3	0
+2015	1110	Gobierno Autónomo Municipal de Padilla	PAD	1	1	7	3	0
+2015	1111	Gobierno Autónomo Municipal de Tomina	VTM	1	1	7	3	0
+2015	1112	Gobierno Autónomo Municipal de Sopachuy	SOP	1	1	7	3	0
+2015	1113	Gobierno Autónomo Municipal de Villa Alcalá	ALC	1	1	7	3	0
+2015	1114	Gobierno Autónomo Municipal de El Villar	VIL	1	1	7	3	0
+2015	1115	Gobierno Autónomo Municipal de Monteagudo	VMT	1	1	7	3	0
+2015	1116	Gobierno Autónomo Municipal de San Pablo de Huacareta	PDM	1	1	7	3	0
+2015	1117	Gobierno Autónomo Municipal de Tarabuco	TARB	1	1	7	3	0
+2015	1118	Gobierno Autónomo Municipal de Yamparáez	YAM	1	1	7	3	0
+2015	1119	Gobierno Autónomo Municipal de Camargo	CAM	1	1	7	3	0
+2015	1120	Gobierno Autónomo Municipal de San Lucas	LUC	1	1	7	3	0
+2015	1121	Gobierno Autónomo Municipal de Incahuasi	INCA	1	1	7	3	0
+2015	1122	Gobierno Autónomo Municipal de Villa Serrano	SER	1	1	7	3	0
+2015	1123	Gobierno Autónomo Municipal de Camataqui (Villa Abecia)	ABE	1	1	7	3	0
+2015	1124	Gobierno Autónomo Municipal de Culpina	CUL	1	1	7	3	0
+2015	1125	Gobierno Autónomo Municipal de Las Carreras	CRR	1	1	7	3	0
+2015	1126	Gobierno Autónomo Municipal de Villa Vaca Guzmán	MUY	1	1	7	3	0
+2015	1127	Gobierno Autónomo Municipal de Villa de Huacaya	VHY	1	1	7	3	0
+2015	1128	Gobierno Autónomo Municipal de Machareti	MAC	1	1	7	3	0
+2015	1129	Gobierno Autónomo Municipal de Villa Charcas	VCH	1	1	7	3	0
+2015	1201	Gobierno Autónomo Municipal de La Paz	LPZ	1	1	7	3	0
+2015	1202	Gobierno Autónomo Municipal de Palca	PLC	1	1	7	3	0
+2015	1203	Gobierno Autónomo Municipal de Mecapaca	MEC	1	1	7	3	0
+2015	1204	Gobierno Autónomo Municipal de Achocalla	ACH	1	1	7	3	0
+2015	1205	Gobierno Autónomo Municipal de El Alto de La Paz	ELLA	1	1	7	3	0
+2015	1206	Gobierno Autónomo Municipal de Viacha	VIA	1	1	7	3	0
+2015	1207	Gobierno Autónomo Municipal de Guaqui	GUA	1	1	7	3	0
+2015	1208	Gobierno Autónomo Municipal de Tiahuanacu	TIA	1	1	7	3	0
+2015	1209	Gobierno Autónomo Municipal de Desaguadero	DES	1	1	7	3	0
+2015	1210	Gobierno Autónomo Municipal de Caranavi	CRV	1	1	7	3	0
+2015	1211	Gobierno Autónomo Municipal de Sica Sica (Villa Aroma)	SIC	1	1	7	3	0
+2015	1212	Gobierno Autónomo Municipal de Umala	UMA	1	1	7	3	0
+2015	1213	Gobierno Autónomo Municipal de Ayo Ayo	AYO	1	1	7	3	0
+2015	1214	Gobierno Autónomo Municipal de Calamarca	CAL	1	1	7	3	0
+2015	1215	Gobierno Autónomo Municipal de Patacamaya	PAT	1	1	7	3	0
+2015	1216	Gobierno Autónomo Municipal de Colquencha	COL	1	1	7	3	0
+2015	1217	Gobierno Autónomo Municipal de Collana	COA	1	1	7	3	0
+2015	1218	Gobierno Autónomo Municipal de Inquisivi	INQ	1	1	7	3	0
+2015	1219	Gobierno Autónomo Municipal de Quime	QUI	1	1	7	3	0
+2015	1220	Gobierno Autónomo Municipal de Cajuata	CAJ	1	1	7	3	0
+2015	1221	Gobierno Autónomo Municipal de Colquiri	COQ	1	1	7	3	0
+2015	1222	Gobierno Autónomo Municipal de Ichoca	ICH	1	1	7	3	0
+2015	1223	Gobierno Autónomo Municipal de Villa Libertad Licoma	LIC	1	1	7	3	0
+2015	1224	Gobierno Autónomo Municipal de Achacachi	AHI	1	1	7	3	0
+2015	1225	Gobierno Autónomo Municipal de Ancoraimes	ANCO	1	1	7	3	0
+2015	1226	Gobierno Autónomo Municipal de Sorata	SOR	1	1	7	3	0
+2015	1227	Gobierno Autónomo Municipal de Guanay	GNY	1	1	7	3	0
+2015	1228	Gobierno Autónomo Municipal de Tacacoma	TAT	1	1	7	3	0
+2015	1229	Gobierno Autónomo Municipal de Tipuani	TIP	1	1	7	3	0
+2015	1230	Gobierno Autónomo Municipal de Quiabaya	QBY	1	1	7	3	0
+2015	1231	Gobierno Autónomo Municipal de Combaya	COM	1	1	7	3	0
+2015	1232	Gobierno Autónomo Municipal de Copacabana	COP	1	1	7	3	0
+2015	1233	Gobierno Autónomo Municipal de San Pedro de Tiquina	SPT	1	1	7	3	0
+2015	1234	Gobierno Autónomo Municipal de Tito Yupanqui	YUP	1	1	7	3	0
+2015	1235	Gobierno Autónomo Municipal de Chuma	CHU	1	1	7	3	0
+2015	1236	Gobierno Autónomo Municipal de Ayata	AYA	1	1	7	3	0
+2015	1237	Gobierno Autónomo Municipal de Aucapata	AUC	1	1	7	3	0
+2015	1238	Gobierno Autónomo Municipal de Corocoro	COR	1	1	7	3	0
+2015	1239	Gobierno Autónomo Municipal de Caquiaviri	CAQ	1	1	7	3	0
+2015	1240	Gobierno Autónomo Municipal de Calacoto	CAC	1	1	7	3	0
+2015	1241	Gobierno Autónomo Municipal de Comanche	CMC	1	1	7	3	0
+2015	1242	Gobierno Autónomo Municipal de Charaña	CHA	1	1	7	3	0
+2015	1243	Gobierno Autónomo Municipal de Waldo Ballivián	BAL	1	1	7	3	0
+2015	1244	Gobierno Autónomo Municipal de Nazacara de Pacajes	NAZ	1	1	7	3	0
+2015	1245	Gobierno Autónomo Municipal de Santiago de Callapa	SCA	1	1	7	3	0
+2015	1246	Gobierno Autónomo Municipal de Puerto Acosta	ACO	1	1	7	3	0
+2015	1247	Gobierno Autónomo Municipal de Mocomoco	MOC	1	1	7	3	0
+2015	1248	Gobierno Autónomo Municipal de Carabuco	CCH	1	1	7	3	0
+2015	1249	Gobierno Autónomo Municipal de Apolo	APO	1	1	7	3	0
+2015	1250	Gobierno Autónomo Municipal de Pelechuco	PEL	1	1	7	3	0
+2015	1251	Gobierno Autónomo Municipal de Luribay	LUR	1	1	7	3	0
+2015	1252	Gobierno Autónomo Municipal de Sapahaqui	SAPA	1	1	7	3	0
+2015	1253	Gobierno Autónomo Municipal de Yaco	YAC	1	1	7	3	0
+2015	1254	Gobierno Autónomo Municipal de Malla	MAL	1	1	7	3	0
+2015	1255	Gobierno Autónomo Municipal de Cairoma	CAI	1	1	7	3	0
+2015	1256	Gobierno Autónomo Municipal de Chulumani (Villa de la Libertad)	CHL	1	1	7	3	0
+2015	1257	Gobierno Autónomo Municipal de Irupana (Villa de Lanza)	IRU	1	1	7	3	0
+2015	1258	Gobierno Autónomo Municipal de Yanacachi	YAN	1	1	7	3	0
+2015	1259	Gobierno Autónomo Municipal de Palos Blancos	BLA	1	1	7	3	0
+2015	1260	Gobierno Autónomo Municipal de La Asunta	ASU	1	1	7	3	0
+2015	1261	Gobierno Autónomo Municipal de Pucarani	PUC	1	1	7	3	0
+2015	1262	Gobierno Autónomo Municipal de Laja	LAJ	1	1	7	3	0
+2015	1263	Gobierno Autónomo Municipal de Batallas	BAT	1	1	7	3	0
+2015	1264	Gobierno Autónomo Municipal de Puerto Pérez	PER	1	1	7	3	0
+2015	1265	Gobierno Autónomo Municipal de Coroico	COC	1	1	7	3	0
+2015	1266	Gobierno Autónomo Municipal de Coripata	CRI	1	1	7	3	0
+2015	1267	Gobierno Autónomo Municipal de Ixiamas	IXI	1	1	7	3	0
+2015	1268	Gobierno Autónomo Municipal de San Buenaventura	SBV	1	1	7	3	0
+2015	1269	Gobierno Autónomo Municipal de General Juan José Pérez (Charazani)	CPE	1	1	7	3	0
+2015	1270	Gobierno Autónomo Municipal de Curva	CUR	1	1	7	3	0
+2015	1271	Gobierno Autónomo Municipal de San Pedro de Curahuara	PEC	1	1	7	3	0
+2015	1272	Gobierno Autónomo Municipal de Papel Pampa	PAP	1	1	7	3	0
+2015	1273	Gobierno Autónomo Municipal de Chacarilla	CLL	1	1	7	3	0
+2015	1274	Gobierno Autónomo Municipal de Santiago de Machaca	SMA	1	1	7	3	0
+2015	1275	Gobierno Autónomo Municipal de Catacora	CAT	1	1	7	3	0
+2015	1276	Gobierno Autónomo Municipal de Mapiri	MAP	1	1	7	3	0
+2015	1277	Gobierno Autónomo Municipal de Teoponte	TEO	1	1	7	3	0
+2015	1278	Gobierno Autónomo Municipal de San Andrés de Machaca	AMA	1	1	7	3	0
+2015	1279	Gobierno Autónomo Municipal de Jesús de Machaca	JMK	1	1	7	3	0
+2015	1280	Gobierno Autónomo Municipal de Taraco	TCO	1	1	7	3	0
+2015	1281	Gobierno Autónomo Municipal de Huarina	HUAR	1	1	7	3	0
+2015	1282	Gobierno Autónomo Municipal de Santiago de Huata	SAH	1	1	7	3	0
+2015	1283	Gobierno Autónomo Municipal de Escoma	ESC	1	1	7	3	0
+2015	1284	Gobierno Autónomo Municipal de Humanata	HUMA	1	1	7	3	0
+2015	1285	Gobierno Autónomo Municipal de Alto Beni	ABN	1	1	7	3	0
+2015	1286	Gobierno Autónomo Municipal de Huatajata	HUAT	1	1	7	3	0
+2015	1287	Gobierno Autónomo Municipal de Chua Cocani	CHCO	1	1	7	3	0
+2015	1301	Gobierno Autónomo Municipal de Cochabamba	CBB	1	1	7	3	0
+2015	1302	Gobierno Autónomo Municipal de Quillacollo	QLL	1	1	7	3	0
+2015	1303	Gobierno Autónomo Municipal de Sipe Sipe	SIP	1	1	7	3	0
+2015	1304	Gobierno Autónomo Municipal de Tiquipaya	TIQ	1	1	7	3	0
+2015	1305	Gobierno Autónomo Municipal de Vinto	VIN	1	1	7	3	0
+2015	1306	Gobierno Autónomo Municipal de Colcapirhua	CCP	1	1	7	3	0
+2015	1307	Gobierno Autónomo Municipal de Aiquile	AIQ	1	1	7	3	0
+2015	1308	Gobierno Autónomo Municipal de Pasorapa	PAS	1	1	7	3	0
+2015	1309	Gobierno Autónomo Municipal de Omereque	OME	1	1	7	3	0
+2015	1310	Gobierno Autónomo Municipal de Independencia	IND	1	1	7	3	0
+2015	1311	Gobierno Autónomo Municipal de Morochata	MOH	1	1	7	3	0
+2015	1312	Gobierno Autónomo Municipal de Sacaba	SCB	1	1	7	3	0
+2015	1313	Gobierno Autónomo Municipal de Colomi	CLM	1	1	7	3	0
+2015	1314	Gobierno Autónomo Municipal de Villa Tunari	TUN	1	1	7	3	0
+2015	1315	Gobierno Autónomo Municipal de Punata	PNT	1	1	7	3	0
+2015	1316	Gobierno Autónomo Municipal de Villa Rivero	VRV	1	1	7	3	0
+2015	1317	Gobierno Autónomo Municipal de San Benito (Villa José Quintín Mendoza)	MEN	1	1	7	3	0
+2015	1318	Gobierno Autónomo Municipal de Tacachi	TAC	1	1	7	3	0
+2015	1319	Gobierno Autónomo Municipal Villa Gualberto Villarroel	VGV	1	1	7	3	0
+2015	1320	Gobierno Autónomo Municipal de Tarata	TRT	1	1	7	3	0
+2015	1321	Gobierno Autónomo Municipal de Anzaldo	ANZ	1	1	7	3	0
+2015	1322	Gobierno Autónomo Municipal de Arbieto	ARB	1	1	7	3	0
+2015	1323	Gobierno Autónomo Municipal de Sacabamba	SBB	1	1	7	3	0
+2015	1324	Gobierno Autónomo Municipal de Cliza	CLI	1	1	7	3	0
+2015	1325	Gobierno Autónomo Municipal de Toco	TOC	1	1	7	3	0
+2015	1326	Gobierno Autónomo Municipal de Tolata	TLA	1	1	7	3	0
+2015	1327	Gobierno Autónomo Municipal de Capinota	CAP	1	1	7	3	0
+2015	1328	Gobierno Autónomo Municipal de Santivañez	SAN	1	1	7	3	0
+2015	1329	Gobierno Autónomo Municipal de Sicaya	SCY	1	1	7	3	0
+2015	1330	Gobierno Autónomo Municipal de Tapacari	TAP	1	1	7	3	0
+2015	1331	Gobierno Autónomo Municipal de Totora	TOT	1	1	7	3	0
+2015	1332	Gobierno Autónomo Municipal de Pojo	POJ	1	1	7	3	0
+2015	1333	Gobierno Autónomo Municipal de Pocona	POC	1	1	7	3	0
+2015	1334	Gobierno Autónomo Municipal de Chimoré	CHI	1	1	7	3	0
+2015	1335	Gobierno Autónomo Municipal de Puerto Villarroel	PVI	1	1	7	3	0
+2015	1336	Gobierno Autónomo Municipal de Arani	ARA	1	1	7	3	0
+2015	1337	Gobierno Autónomo Municipal de Vacas	VAC	1	1	7	3	0
+2015	1338	Gobierno Autónomo Municipal de Arque	ARQ	1	1	7	3	0
+2015	1339	Gobierno Autónomo Municipal de Tacopaya	TPY	1	1	7	3	0
+2015	1340	Gobierno Autónomo Municipal de Bolivar	BOL	1	1	7	3	0
+2015	1341	Gobierno Autónomo Municipal de Tiraque	TRQ	1	1	7	3	0
+2015	1342	Gobierno Autónomo Municipal de Mizque	MIZ	1	1	7	3	0
+2015	1343	Gobierno Autónomo Municipal de Vila Vila	VIS	1	1	7	3	0
+2015	1344	Gobierno Autónomo Municipal de Alalay	ALA	1	1	7	3	0
+2015	1345	Gobierno Autónomo Municipal de Entre Rios	ERI	1	1	7	3	0
+2015	1346	Gobierno Autónomo Municipal de Cocapata	CCT	1	1	7	3	0
+2015	1347	Gobierno Autónomo Municipal de Shinahota	SHI	1	1	7	3	0
+2015	1401	Gobierno Autónomo Municipal de Oruro	ORU	1	1	7	3	0
+2015	1402	Gobierno Autónomo Municipal de Caracollo	CAR	1	1	7	3	0
+2015	1403	Gobierno Autónomo Municipal de El Choro	CHO	1	1	7	3	0
+2015	1404	Gobierno Autónomo Municipal de Challapata	CHT	1	1	7	3	0
+2015	1405	Gobierno Autónomo Municipal de Santuario de Quillacas	STQ	1	1	7	3	0
+2015	1406	Gobierno Autónomo Municipal de Huanuni	VHU	1	1	7	3	0
+2015	1407	Gobierno Autónomo Municipal de Machacamarca	MAR	1	1	7	3	0
+2015	1408	Gobierno Autónomo Municipal de Poopó (Villa Poopó)	POO	1	1	7	3	0
+2015	1409	Gobierno Autónomo Municipal de Pazña	PAZ	1	1	7	3	0
+2015	1410	Gobierno Autónomo Municipal de Antequera	ANT	1	1	7	3	0
+2015	1411	Gobierno Autónomo Municipal de Eucaliptus	EUC	1	1	7	3	0
+2015	1412	Gobierno Autónomo Municipal de Santiago de Huari	SHU	1	1	7	3	0
+2015	1413	Gobierno Autónomo Municipal de Totora	TTR	1	1	7	3	0
+2015	1414	Gobierno Autónomo Municipal de Corque	CRQ	1	1	7	3	0
+2015	1415	Gobierno Autónomo Municipal de Choquecota	CHE	1	1	7	3	0
+2015	1416	Gobierno Autónomo Municipal de Curahuara de Carangas	CDC	1	1	7	3	0
+2015	1417	Gobierno Autónomo Municipal de Turco	TUR	1	1	7	3	0
+2015	1418	Gobierno Autónomo Municipal de Huachacalla	HCH	1	1	7	3	0
+2015	1419	Gobierno Autónomo Municipal de Escara	ESA	1	1	7	3	0
+2015	1420	Gobierno Autónomo Municipal de Cruz de Machacamarca	CMA	1	1	7	3	0
+2015	1421	Gobierno Autónomo Municipal de Yunguyo de Litoral	YUG	1	1	7	3	0
+2015	1422	Gobierno Autónomo Municipal de Esmeralda	ESM	1	1	7	3	0
+2015	1423	Gobierno Autónomo Municipal de Toledo	TOL	1	1	7	3	0
+2015	1424	Gobierno Autónomo Municipal de Andamarca (Santiago de Andamarca)	ADN	1	1	7	3	0
+2015	1425	Gobierno Autónomo Municipal de Belén de Andamarca	BEL	1	1	7	3	0
+2015	1426	Gobierno Autónomo Municipal de Salinas de G. Mendoza	SAL	1	1	7	3	0
+2015	1427	Gobierno Autónomo Municipal de Pampa Aullagas	PAM	1	1	7	3	0
+2015	1428	Gobierno Autónomo Municipal de La Rivera	RIV	1	1	7	3	0
+2015	1429	Gobierno Autónomo Municipal de Todos Santos	TOS	1	1	7	3	0
+2015	1430	Gobierno Autónomo Municipal de Carangas	CGA	1	1	7	3	0
+2015	1431	Gobierno Autónomo Municipal de Sabaya	SAP	1	1	7	3	0
+2015	1432	Gobierno Autónomo Municipal de Coipasa	COI	1	1	7	3	0
+2015	1433	Gobierno Autónomo Municipal de Chipaya	CHP	1	1	7	3	0
+2015	1434	Gobierno Autónomo Municipal de Huayllamarca (Santiago de Huayllamarca)	SDH	1	1	7	3	0
+2015	1435	Gobierno Autónomo Municipal de Soracachi	SRC	1	1	7	3	0
+2015	1501	Gobierno Autónomo Municipal de Potosí	POT	1	1	7	3	0
+2015	1502	Gobierno Autónomo Municipal de Tinguipaya	TIN	1	1	7	3	0
+2015	1503	Gobierno Autónomo Municipal de Yocalla	YOC	1	1	7	3	0
+2015	1504	Gobierno Autónomo Municipal de Urmiri	URM	1	1	7	3	0
+2015	1505	Gobierno Autónomo Municipal de Uncía	UNC	1	1	7	3	0
+2015	1506	Gobierno Autónomo Municipal de Chayanta	CHY	1	1	7	3	0
+2015	1507	Gobierno Autónomo Municipal de Llallagua	LLA	1	1	7	3	0
+2015	1508	Gobierno Autónomo Municipal de Betanzos	BET	1	1	7	3	0
+2015	1509	Gobierno Autónomo Municipal de Chaqui	CHQ	1	1	7	3	0
+2015	1510	Gobierno Autónomo Municipal de Tacobamba	TCB	1	1	7	3	0
+2015	1511	Gobierno Autónomo Municipal de Colquechaca	CCQ	1	1	7	3	0
+2015	1512	Gobierno Autónomo Municipal de Ravelo	RAV	1	1	7	3	0
+2015	1513	Gobierno Autónomo Municipal de Pocoata	PCT	1	1	7	3	0
+2015	1514	Gobierno Autónomo Municipal de Ocurí	OCU	1	1	7	3	0
+2015	1515	Gobierno Autónomo Municipal de San Pedro de Buena Vista	PED	1	1	7	3	0
+2015	1516	Gobierno Autónomo Municipal de Toro Toro	TTO	1	1	7	3	0
+2015	1517	Gobierno Autónomo Municipal de Cotagaita	COT	1	1	7	3	0
+2015	1518	Gobierno Autónomo Municipal de Vitichi	VIT	1	1	7	3	0
+2015	1519	Gobierno Autónomo Municipal de Tupiza	TUP	1	1	7	3	0
+2015	1520	Gobierno Autónomo Municipal de Atocha	ATO	1	1	7	3	0
+2015	1521	Gobierno Autónomo Municipal de Colcha	K	0	0	1	1	7
+2015	1522	Gobierno Autónomo Municipal de San Pedro de Quemes	PEQ	1	1	7	3	0
+2015	1523	Gobierno Autónomo Municipal de San Pablo de Lípez	PAB	1	1	7	3	0
+2015	1524	Gobierno Autónomo Municipal de Mojinete	MOJ	1	1	7	3	0
+2015	1525	Gobierno Autónomo Municipal de San Antonio de Esmoruco	SANT	1	1	7	3	0
+2015	1526	Gobierno Autónomo Municipal de Sacaca (Villa de Sacaca)	SAC	1	1	7	3	0
+2015	1527	Gobierno Autónomo Municipal de Caripuyo	CRP	1	1	7	3	0
+2015	1528	Gobierno Autónomo Municipal de Puna (Villa Talavera)	PUN	1	1	7	3	0
+2015	1529	Gobierno Autónomo Municipal de Caiza	D	0	0	1	1	7
+2015	1530	Gobierno Autónomo Municipal de Uyuni	UYU	1	1	7	3	0
+2015	1531	Gobierno Autónomo Municipal de Tomave	TOM	1	1	7	3	0
+2015	1532	Gobierno Autónomo Municipal de Porco	PRC	1	1	7	3	0
+2015	1533	Gobierno Autónomo Municipal de Arampampa	ARP	1	1	7	3	0
+2015	1534	Gobierno Autónomo Municipal de Acasio	ACA	1	1	7	3	0
+2015	1535	Gobierno Autónomo Municipal de Llica	LLI	1	1	7	3	0
+2015	1536	Gobierno Autónomo Municipal de Tahua	TAH	1	1	7	3	0
+2015	1537	Gobierno Autónomo Municipal de Villazón	VLZ	1	1	7	3	0
+2015	1538	Gobierno Autónomo Municipal de San Agustín	AGU	1	1	7	3	0
+2015	1539	Gobierno Autónomo Municipal de Ckochas	CKO	1	1	7	3	0
+2015	1540	Gobierno Autónomo Municipal de Chuquihuta Ayllu Jucumani	JUC	1	1	7	3	0
+2015	1601	Gobierno Autónomo Municipal de Tarija	TRJ	1	1	7	3	0
+2015	1602	Gobierno Autónomo Municipal de Padcaya	PCY	1	1	7	3	0
+2015	1603	Gobierno Autónomo Municipal de Bermejo	BER	1	1	7	3	0
+2015	1604	Gobierno Autónomo Municipal de Yacuiba	YCB	1	1	7	3	0
+2015	1605	Gobierno Autónomo Municipal de Caraparí	CRY	1	1	7	3	0
+2015	1606	Gobierno Autónomo Municipal de Villamontes	MON	1	1	7	3	0
+2015	1607	Gobierno Autónomo Municipal de Uriondo (Concepción)	ORI	1	1	7	3	0
+2015	1608	Gobierno Autónomo Municipal de Yunchara	YUN	1	1	7	3	0
+2015	1609	Gobierno Autónomo Municipal de San Lorenzo	SLR	1	1	7	3	0
+2015	1610	Gobierno Autónomo Municipal de El Puente	TMY	1	1	7	3	0
+2015	1611	Gobierno Autónomo Municipal de Entre Ríos	RIO	1	1	7	3	0
+2015	1701	Gobierno Autónomo Municipal de Santa Cruz de La Sierra	SCZ	1	1	7	3	0
+2015	1702	Gobierno Autónomo Municipal de Cotoca	CTC	1	1	7	3	0
+2015	1703	Gobierno Autónomo Municipal de Porongo (Ayacucho)	PRG	1	1	7	3	0
+2015	1704	Gobierno Autónomo Municipal de La Guardia	LGU	1	1	7	3	0
+2015	1705	Gobierno Autónomo Municipal de El Torno	TOR	1	1	7	3	0
+2015	1706	Gobierno Autónomo Municipal de Warnes	WAR	1	1	7	3	0
+2015	1707	Gobierno Autónomo Municipal de San Ignacio (San Ignacio de Velasco)	ING	1	1	7	3	0
+2015	1708	Gobierno Autónomo Municipal de San Miguel (San Miguel de Velasco)	MIG	1	1	7	3	0
+2015	1709	Gobierno Autónomo Municipal de San Rafael	RAF	1	1	7	3	0
+2015	1710	Gobierno Autónomo Municipal de Buena Vista	BUE	1	1	7	3	0
+2015	1711	Gobierno Autónomo Municipal de San Carlos	CRL	1	1	7	3	0
+2015	1712	Gobierno Autónomo Municipal de Yapacaní	YAP	1	1	7	3	0
+2015	1713	Gobierno Autónomo Municipal de San José	JOS	1	1	7	3	0
+2015	1714	Gobierno Autónomo Municipal de Pailón	PAI	1	1	7	3	0
+2015	1715	Gobierno Autónomo Municipal de Roboré	ROB	1	1	7	3	0
+2015	1716	Gobierno Autónomo Municipal de Portachuelo	PCH	1	1	7	3	0
+2015	1717	Gobierno Autónomo Municipal de Santa Rosa del Sara	SRS	1	1	7	3	0
+2015	1718	Gobierno Autónomo Municipal de Lagunillas	LAG	1	1	7	3	0
+2015	1719	Gobierno Autónomo Municipal de Charagua	CHR	1	1	7	3	0
+2015	1720	Gobierno Autónomo Municipal de Cabezas	CAB	1	1	7	3	0
+2015	1721	Gobierno Autónomo Municipal de Cuevo	CUE	1	1	7	3	0
+2015	1722	Gobierno Autónomo Municipal de Gutiérrez	GUT	1	1	7	3	0
+2015	1723	Gobierno Autónomo Municipal de Camiri	CMR	1	1	7	3	0
+2015	1724	Gobierno Autónomo Municipal de Boyuibe	BOY	1	1	7	3	0
+2015	1725	Gobierno Autónomo Municipal de Vallegrande	GRA	1	1	7	3	0
+2015	1726	Gobierno Autónomo Municipal de Trigal	TRG	1	1	7	3	0
+2015	1727	Gobierno Autónomo Municipal de Moro Moro	MOR	1	1	7	3	0
+2015	1728	Gobierno Autónomo Municipal de Postrer Valle	POS	1	1	7	3	0
+2015	1729	Gobierno Autónomo Municipal de Pucara	PCR	1	1	7	3	0
+2015	1730	Gobierno Autónomo Municipal de Samaipata	SAM	1	1	7	3	0
+2015	1731	Gobierno Autónomo Municipal de Pampa Grande	PAG	1	1	7	3	0
+2015	1732	Gobierno Autónomo Municipal de Mairana	MAY	1	1	7	3	0
+2015	1733	Gobierno Autónomo Municipal de Quirusillas	QRS	1	1	7	3	0
+2015	1734	Gobierno Autónomo Municipal de Montero	MTR	1	1	7	3	0
+2015	1735	Gobierno Autónomo Municipal de General Agustín Saavedra	SAA	1	1	7	3	0
+2015	1736	Gobierno Autónomo Municipal de Mineros	MIN	1	1	7	3	0
+2015	1737	Gobierno Autónomo Municipal de Concepción	CON	1	1	7	3	0
+2015	1738	Gobierno Autónomo Municipal de San Javier	SJA	1	1	7	3	0
+2015	1739	Gobierno Autónomo Municipal de San Julián	JUL	1	1	7	3	0
+2015	1740	Gobierno Autónomo Municipal de San Matías	MAT	1	1	7	3	0
+2015	1741	Gobierno Autónomo Municipal de Comarapa	CMP	1	1	7	3	0
+2015	1742	Gobierno Autónomo Municipal de Saipina	SAI	1	1	7	3	0
+2015	1743	Gobierno Autónomo Municipal de Puerto Suárez	SUA	1	1	7	3	0
+2015	1744	Gobierno Autónomo Municipal de Puerto Quijarro	PQO	1	1	7	3	0
+2015	1745	Gobierno Autónomo Municipal de Ascención de Guarayos	ADG	1	1	7	3	0
+2015	1746	Gobierno Autónomo Municipal de Urubicha	URU	1	1	7	3	0
+2015	1747	Gobierno Autónomo Municipal de El Puente	PUE	1	1	7	3	0
+2015	1748	Gobierno Autónomo Municipal de Okinawa Uno	OKI	1	1	7	3	0
+2015	1749	Gobierno Autónomo Municipal de San Antonio de Lomerio	ANL	1	1	7	3	0
+2015	1750	Gobierno Autónomo Municipal de San Ramón	SRA	1	1	7	3	0
+2015	1751	Gobierno Autónomo Municipal de El Carmen Rivero Tórrez	CRT	1	1	7	3	0
+2015	1752	Gobierno Autónomo Municipal de San Juan	SJU	1	1	7	3	0
+2015	1753	Gobierno Autónomo Municipal de Fernández Alonso	FAL	1	1	7	3	0
+2015	1754	Gobierno Autónomo Municipal de San Pedro	PDR	1	1	7	3	0
+2015	1755	Gobierno Autónomo Municipal de Cuatro Cañadas	CCA	1	1	7	3	0
+2015	1756	Gobierno Autónomo Municipal de Colpa Bélgica	CBE	1	1	7	3	0
+2015	1801	Gobierno Autónomo Municipal de Trinidad	TRI	1	1	7	3	0
+2015	1802	Gobierno Autónomo Municipal de San Javier	JAV	1	1	7	3	0
+2015	1803	Gobierno Autónomo Municipal de Riberalta	RIB	1	1	7	3	0
+2015	1805	Gobierno Autónomo Municipal de Puerto Guayaramerín	PGU	1	1	7	3	0
+2015	1806	Gobierno Autónomo Municipal de Reyes	REY	1	1	7	3	0
+2015	1807	Gobierno Autónomo Municipal de Puerto Rurrenabaque	RUR	1	1	7	3	0
+2015	1808	Gobierno Autónomo Municipal de San Borja	BOR	1	1	7	3	0
+2015	1809	Gobierno Autónomo Municipal de Santa Rosa	ROS	1	1	7	3	0
+2015	1810	Gobierno Autónomo Municipal de Santa Ana	ANA	1	1	7	3	0
+2015	1811	Gobierno Autónomo Municipal de San Ignacio	IGN	1	1	7	3	0
+2015	1812	Gobierno Autónomo Municipal de Loreto	LOR	1	1	7	3	0
+2015	1813	Gobierno Autónomo Municipal de San Andrés	SAD	1	1	7	3	0
+2015	1814	Gobierno Autónomo Municipal de San Joaquín	JOA	1	1	7	3	0
+2015	1815	Gobierno Autónomo Municipal de San Ramón	RAM	1	1	7	3	0
+2015	1816	Gobierno Autónomo Municipal de Puerto Síles	SIL	1	1	7	3	0
+2015	1817	Gobierno Autónomo Municipal de Magdalena	MAG	1	1	7	3	0
+2015	1818	Gobierno Autónomo Municipal de Baures	BAU	1	1	7	3	0
+2015	1819	Gobierno Autónomo Municipal de Huacaraje	HUA	1	1	7	3	0
+2015	1820	Gobierno Autónomo Municipal de Exaltación	EXA	1	1	7	3	0
+2015	1901	Gobierno Autónomo Municipal de Cobija	CBJ	1	1	7	3	0
+2015	1902	Gobierno Autónomo Municipal de Porvenir	PRV	1	1	7	3	0
+2015	1903	Gobierno Autónomo Municipal de Bolpebra	BOP	1	1	7	3	0
+2015	1904	Gobierno Autónomo Municipal de Bella Flor	FLO	1	1	7	3	0
+2015	1905	Gobierno Autónomo Municipal de Puerto Rico	PRI	1	1	7	3	0
+2015	1906	Gobierno Autónomo Municipal de San Pedro	SPE	1	1	7	3	0
+2015	1907	Gobierno Autónomo Municipal de Filadelfia	FIL	1	1	7	3	0
+2015	1908	Gobierno Autónomo Municipal de Puerto Gonzalo Moreno	PGM	1	1	7	3	0
+2015	1909	Gobierno Autónomo Municipal de San Lorenzo	SLO	1	1	7	3	0
+2015	1910	Gobierno Autónomo Municipal de Sena	SEN	1	1	7	3	0
+2015	1911	Gobierno Autónomo Municipal de Santa Rosa del Abuná	SRO	1	1	7	3	0
+2015	1912	Gobierno Autónomo Municipal de Ingavi (Humaita)	HUM	1	1	7	3	0
+2015	1913	Gobierno Autónomo Municipal de Nueva Esperanza	NES	1	1	7	3	0
+2015	1914	Gobierno Autónomo Municipal de Villa Nueva (Loma Alta)	LOM	1	1	7	3	0
+2015	1915	Gobierno Autónomo Municipal de Santos Mercado	MER	1	1	7	3	0
+2015	2301	Empresa Municipal de Gestión de Residuos Sólidos	GERES	1	1	6	3	0
+2015	2302	Empresa Municipal de Agua Potable y Alcantarillado Sacaba	EMAPAS	1	1	6	3	0
+2015	2303	Empresa Municipal de Areas Verdes y Recreación Alternativa	EMAVRA	1	1	6	3	0
+2015	2311	SERVICIO DE CUENCAS (SEARPI)	SEARPI	1	1	3	2	0
+2015	2312	EMPRESA MUNICIPAL DE AGUA POTABLE Y ALCANTARILLADO VIACHA	EMAPAV	1	1	6	3	0
+2015	2313	ENTIDAD MUNICIPAL DE ASEO URBANO SUCRE	EMAS	1	1	3	4	0
+2015	2314	EMPRESA MUNICIPAL DE AREAS VERDES SUCRE	EMAVS	1	1	6	3	0
+2015	2315	Empresa Municipal de Servicio de Aseo	EMSA	1	1	6	3	0
+2015	2316	Empresa Municipal de Áreas Verdes, Parques y Forestación	EMAVERDE	1	1	6	3	0
+2015	2317	Empresa Municipal de Asfaltos y Vías	EMAVIAS	1	1	6	3	0
+2015	2318	Entidad Descentralizada UMMIPRE PROMAN	UMMIPRE PROMAN	1	1	3	4	0
+2015	2319	EMPRESA PÚBLICA DEPARTAMENTAL ESTRATÉGICA DE AGUAS - LA PAZ	EDALP	1	1	6	4	0
+2015	2320	EMPRESA PUBLICA MUNICIPAL DE SERVICIOS DE AGUA Y ALCANTARRILLADO SANITARIO DE COBIJA	EPSA COBIJA	1	1	6	3	0
+2015	2321	EMPRESA MUNICIPAL DE ASEO DE EL ALTO	EMALT	1	1	3	4	0
+2015	2322	ENTIDAD MATADERO FRIGORIFICO MUNICIPAL DE TARIJA	EMAF	1	1	3	4	0
+2015	2323	ENTIDAD ASEO MUNICIPAL DE TARIJA	EMAT	1	1	3	4	0
+2015	2324	ENTIDAD OBRAS PUBLICAS MUNICIPALES DE TARIJA	OPUM	1	1	3	4	0
+2015	2325	ENTIDAD ORDENAMIENTO TERRITORIAL DE TARIJA	OTE	1	1	3	4	0
+2015	2326	ENTIDAD ORDEN Y SEGURIDAD CIUDADANA MUNICIPAL DE TARIJA	OSEC	1	1	3	4	0
+2015	2327	EMPRESA MUNICIPAL AUTONOMA DE AGUA POTABLE Y ALCANTARILLADO  DE YACUIBA	EMAPYC	1	1	6	3	0
+2015	2328	EMPRESA MUNICIPAL DE AGUA POTABLE Y ALCANTARILLADO DE URIONDO	EMAPAU	1	1	6	3	0
+2015	2330	Empresa Pública Departamental de Servicios Eléctricos Tarija - Setar	SETAR	1	1	6	4	0
+2015	2331	ENTIDAD DESCENTRALIZADA MUNICIPAL TERMINAL DE BUSES LA PAZ	EDMTB	1	1	3	4	0
+2015	2336	EMPRESA PUBLICA DEPARTAMENTAL FABRICA DE CALAMINAS Y CLAVOS POTOSI	FCCCP-EPD	1	1	6	4	0
+2015	3701	GAIOC de Charagua Iyambae	CHIY	1	1	7	4	0
+2015	4601	Gobierno Autónomo Regional del Gran Chaco	GAR - GCH	1	1	7	2	0
+2015	9001	Federación de Asociaciones Municipales de Bolivia	FAM	2	1	0	0	0
+2015	9002	MANCOMUNIDAD DE MUNICIPIOS DE LOS CHICHAS	MANCHI	2	2	0	0	0
+2015	9003	MANCOMUNIDAD DE MUNICIPIOS DE CHUQUISACA CENTRO	MANCHC	2	2	0	0	0
+2015	9004	MANCOMUNIDAD DE MUNICIPIOS DE VALLEGRANDE	MANVA	2	2	0	0	0
+2015	387	Agencia del Desarrollo del Cine y Audiovisual Bolivianos	ADECINE	1	1	3	1	0
+2015	386	Servicio Plurinacional de la Mujer y de la Despatriarcalización Ana María Romero	SEPMUD	1	1	3	1	0
+2015	600	Empresa Servicios Aéreos Bolivianos	ESABOL	1	1	6	1	0
+2015	2338	EMPRESA PRESTADORA DE SERVICIO DE AGUA POTABLE Y ALCANTARILLADO	EPSA MUNICIPAL	1	1	6	3	0
+2015	2337	ENTIDAD DESCENTRALIZADA MUNICIPAL DE CEMENTERIOS DE LA PAZ	EDMCLP	1	1	3	4	0
+2015	379	Escuela Boliviana Intercultural de Danza	EBID	1	1	3	1	0
+2015	2335	ENTIDAD MUNICIPAL DE ASEO POTOSI	EMAP	1	1	3	4	0
+2015	53	Ministerio de Culturas, Descolonización y Despatriarcalización	MIN-CDD	1	1	1	2	0
+2015	1541	Gobierno Autónomo Municipal de San Pedro de Macha	SPM	1	1	7	3	0
+2015	2341	EMPRESA MUNICIPAL DE DISTRIBUCION DE ENERGIA ELECTRICA LLALLAGUA	EMDELL	1	1	6	3	0
+2015	3402	Gobierno Autónomo Indígena Originario Campesino de Salinas	GAIOC-SA	1	1	7	4	0
+2015	3702	Gobierno Autónomo Indígena Guaraní Kereimba Iyaambae	GKI	1	1	7	4	0
+2015	388	Servicio Plurinacional de Registro de Comercio	SEPREC	1	1	3	1	0
+2015	2339	EMPRESA MUNICIPAL FABRICA DE JOYAS	EMUJOYAS	1	1	6	3	0
+2015	601	EMPRESA BOLIVIANA DE PRODUCCION AGROPECUARIA	B-Agro	1	1	6	1	0
+2015	3501	Gobierno Autónomo Indígena Originario Campesino de la Autonomía Originaria del Jatún Ayllu Yura	GAIOC - AOJAY	1	1	7	4	0
+2015	389	NAVEGACION AEREA Y AEROPUERTOS BOLIVIANOS	NAABOL	1	1	3	1	0
+2015	2346	ENTIDAD DESCENTRALIZADA TERMINAL METROPOLITANA EL ALTO	EDTMEA	1	1	3	4	0
+2015	390	Instituto Gastroenterológico del Bicentenario - Hospital de Cuarto Nivel	IGB	1	1	3	1	0
+2015	2351	LABORATORIO INDUSTRIAL DE PRODUCTOS NATURALES KALLPAWAWA	KALLPAWAWA	1	1	6	3	0
+2015	2353	EMPRESA MUNICIPAL DE AGUA POTABLE Y ALCANTARILLADO SANITARIO DE RIBERALTA - "EMAAR"	EMAAR	1	1	3	4	0
+2015	2354	EMPRESA PRESTADORA DE SERVICIOS DE AGUA Y ALCANTARILLADO (EPSA-COROICO)	EPSA-COROICO	1	1	3	4	0
+2015	3801	GOBIERNO INDÍGENA AUTÓNOMO DEL TERRITORIO INDÍGENA MULTIÉTNICO	GIA-TIM	1	1	7	4	0
+2015	54	Ministerio de Turismo Sostenible, Culturas, Folklore y Gastronomía	MIN-TSCFyG	1	1	1	2	0
+2015	3101	Autonomía del Territorio Indígena Originario Campesino Guaraní Chaqueño de Huacaya	ATIOCGCH	1	1	7	4	0
+2015	391	Unidad de Comunicación Estratégica del Estado Plurinacional de Bolivia	UCE	1	1	3	1	0
+2015	392	Despacho de Gestión Social de Su Excelencia	DEGSE	1	1	3	1	0
+2015	393	Entidad de Servicios Integrales de Acceso a la Justicia	ESIJ	1	1	3	1	0
+2015	2342	ENTIDAD DE SERVICIO DE AGUA POTABLE Y ALCANTARILLADO MUNICIPAL	SEAPAM	1	1	3	4	0
+2015	2358	EMPRESA MUNICIPAL DE ASEO ORURO	EMAO	1	1	3	4	0

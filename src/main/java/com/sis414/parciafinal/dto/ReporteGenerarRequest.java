@@ -2,18 +2,15 @@ package com.sis414.parciafinal.dto;
 
 import java.math.BigDecimal;
 
-/**
- * Datos para generar reportes personalizados.
- * Los filtros null representan la opcion TODOS.
- */
+/** Pantalla "REPORTES A MEDIDA". Un filtro en null equivale al botón "Todos"; sin entidad/unidad equivale a "Consolidado". */
 public record ReporteGenerarRequest(
-        Long entidadId,
-        Long unidadId,
-        Long grupoId,
-        Long auxiliarId,
-        Long activoId,
-        Long oficinaId,
-        Long responsableId,
+        String entidad,
+        String unidad,
+        Integer codCont,
+        Integer codAux,
+        String codigo,
+        Integer codOfic,
+        Integer codResp,
         Integer anoInicial,
         Integer anoFinal,
         Integer dia,

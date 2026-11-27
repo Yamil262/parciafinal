@@ -2,7 +2,9 @@ package com.sis414.parciafinal.service;
 
 import com.sis414.parciafinal.dto.AcercaDto;
 import com.sis414.parciafinal.dto.ContextoDto;
+import com.sis414.parciafinal.entity.Entidad;
 import com.sis414.parciafinal.entity.UnidadAdmin;
+import com.sis414.parciafinal.repository.EntidadRepository;
 import com.sis414.parciafinal.repository.RespaldoRepository;
 import com.sis414.parciafinal.repository.UnidadAdminRepository;
 import org.springframework.stereotype.Service;
@@ -14,23 +16,26 @@ public class SistemaService {
 
     private final ConfiguracionService configuracion;
     private final UnidadAdminRepository unidadRepository;
+    private final EntidadRepository entidadRepository;
     private final RespaldoRepository respaldoRepository;
 
     public SistemaService(ConfiguracionService configuracion, UnidadAdminRepository unidadRepository,
-                          RespaldoRepository respaldoRepository) {
+                          EntidadRepository entidadRepository, RespaldoRepository respaldoRepository) {
         this.configuracion = configuracion;
         this.unidadRepository = unidadRepository;
+        this.entidadRepository = entidadRepository;
         this.respaldoRepository = respaldoRepository;
     }
 
     @Transactional(readOnly = true)
     public ContextoDto contexto() {
-        Long id = configuracion.unidadSeleccionadaId();
-        UnidadAdmin u = id == null ? null : unidadRepository.findById(id).orElse(null);
+        String[] sel = configuracion.unidadSeleccionada();
+        UnidadAdmin u = sel == null ? null : unidadRepository.findById(new UnidadAdmin.Key(sel[0], sel[1])).orElse(null);
+        Entidad e = u == null ? null : entidadRepository.findFirstByEntidadOrderByGestionDesc(u.getEntidad()).orElse(null);
         long respaldos = respaldoRepository.count();
         return new ContextoDto(
-                u == null || u.getEntidad() == null ? "0" : u.getEntidad().getCodigo(),
-                u == null || u.getEntidad() == null ? null : u.getEntidad().getDescEnt(),
+                u == null ? "0" : u.getEntidad(),
+                e == null ? null : e.getDescEnt(),
                 u == null ? null : u.getUnidad(),
                 u == null ? null : u.getDescrip(),
                 configuracion.gestion(),

@@ -1,0 +1,40 @@
+reportName	contents	modType
+rep7	Reporte de Oficinas con sus Responsables	oficinas
+rep14a	Reporte de Grupos y Auxiliares contables	grupos
+rep9	Activos dados de baja	reval
+rep11	Reporte de Indices UFV	tipcamb
+rep6	Resumen de Activos Fijos por Grupo	Rep_cont
+rep1	Inventario ordenado por C¢digo de Activo	Activfij
+rep2	Inventario ordenado por Grupo Contable	Activfij
+rep3	Inventario ordenado por Grupo y Auxiliar Contable	Activfij
+rep4	Inventario ordenado por Oficina	Activfij
+rep5	Inventario ordenado por Oficina y Responsable	Activfij
+rep6	Resumen de Activos Fijos por Grupo	Activfij
+rep7	Detalle de Responsables por Oficina	Activfij
+rep8	Reporte de Transferencia de Activos	Activfij
+rep9	Reporte Historico de Activos dados de Baja	Activfij
+rep10	Inventario de Activos Fijos por Grupo Contable	Activfij
+rep11	Reporte de Indices UFV	Activfij
+rep12	Reporte Historico de Activos Revaluados	Activfij
+rep13	Asignacion Individual de Bienes	Activfij
+rep1	Inventario ordenado por Código de Activo	Calcula
+rep2	Inventario ordenado por Grupo Contable	Calcula
+rep3	Inventario ordenado por Grupo y Auxiliar Contable	Calcula
+rep4	Inventario ordenado por Oficina	Calcula
+rep5	Inventario ordenado por Oficina y Responsable	Calcula
+rep6	Resumen de Activos Fijos por Grupo	Calcula
+rep7	Detalle de Responsables por Oficina	Calcula
+rep8	Reporte de Transferencia de Activos	Calcula
+rep9	Reporte Historico de Activos dados de Baja	Calcula
+rep10	Inventario de Activos Fijos por Grupo Contable	Calcula
+rep11	Reporte de Indices UFV	Calcula
+rep12	Reporte Historico de Activos Revaluados	Calcula
+rep13	Asignacion Individual de Bienes	Calcula
+rep14	Reporte de Bajas por Error de Transcripción	Activfij
+rep14	Reporte de Bajas por Error de Transcripción	Calcula
+rep15	Resumen de Activos Fijos Ordenador por Grupo	Calcula
+rep16	Acta de Devolucion de Bienes	Calcula
+rep10i	Incorporacion de Activos	Cont
+reval_r	Revaluos por PArtida	Cont
+rep_par	Grupo de Gasto	Cont
+rep17	Inventario ordenado por Grupo Contable y Organismo	Calcula

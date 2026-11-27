@@ -5,6 +5,7 @@ import com.sis414.parciafinal.dto.FechaCalculoDto;
 import com.sis414.parciafinal.entity.ActivoFijo;
 import com.sis414.parciafinal.entity.Grupo;
 import com.sis414.parciafinal.entity.Mes;
+import com.sis414.parciafinal.repository.GrupoRepository;
 import com.sis414.parciafinal.repository.MesRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -16,22 +17,22 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
 import java.util.Locale;
 
 /**
- * Calculos de la pantalla Activos Fijos / Reportes.
- * Regla deducida de la pantalla del VSIAF (costo 1.23, vida 4 anios, 39 dias): 
- * % deprecia = 100 / vida; dep. gestion = valor actual x % x dias / 365; valor neto = valor actual - dep. acumulada.
- * No existe tabla de indices UFV entre las 24 tablas, por eso las UFV llegan como parametro.
+ * Cálculos de la pantalla Activos Fijos / Reportes.
+ * % deprecia = 100 / vida; dep. gestión = valor actual x % x días / 365; valor neto = valor actual - dep. acumulada.
+ * No existe tabla de índices UFV entre las 24 tablas, por eso las UFV llegan como parámetro.
  */
 @Service
 public class CalculoActivoService {
 
     private final MesRepository mesRepository;
+    private final GrupoRepository grupoRepository;
 
-    public CalculoActivoService(MesRepository mesRepository) {
+    public CalculoActivoService(MesRepository mesRepository, GrupoRepository grupoRepository) {
         this.mesRepository = mesRepository;
+        this.grupoRepository = grupoRepository;
     }
 
     public LocalDate fecha(Integer dia, Integer mes, Integer ano) {
@@ -48,17 +49,20 @@ public class CalculoActivoService {
     }
 
     public FechaCalculoDto fechaDto(LocalDate f) {
-        List<Mes> meses = mesRepository.findByMes(f.getMonthValue());
-        String nombre = meses.isEmpty()
-                ? f.getMonth().getDisplayName(TextStyle.FULL, Locale.forLanguageTag("es")).toUpperCase()
-                : meses.get(0).getNomMes();
+        String nombre = mesRepository.findById(f.getMonthValue())
+                .map(Mes::getNomMes)
+                .orElse(f.getMonth().getDisplayName(TextStyle.FULL, Locale.forLanguageTag("es")).toUpperCase());
         return new FechaCalculoDto(f.getDayOfMonth(), f.getMonthValue(), nombre, f.getYear());
     }
 
     public CalculoActivoDto calcular(ActivoFijo a, LocalDate fecha, BigDecimal ufvInc, BigDecimal ufvCalc) {
+        Grupo g = a.getCodCont() == null ? null : grupoRepository.findById(a.getCodCont()).orElse(null);
+        return calcular(a, g, fecha, ufvInc, ufvCalc);
+    }
+
+    public CalculoActivoDto calcular(ActivoFijo a, Grupo g, LocalDate fecha, BigDecimal ufvInc, BigDecimal ufvCalc) {
         BigDecimal costo = nz(a.getCosto());
         BigDecimal depIni = nz(a.getDepacu());
-        Grupo g = a.getGrupo();
         boolean actualizar = g == null || !Boolean.FALSE.equals(g.getActualizar());
         boolean depreciar = g == null || !Boolean.FALSE.equals(g.getDepreciar());
 

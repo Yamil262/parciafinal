@@ -2,19 +2,15 @@ package com.sis414.parciafinal.entity;
 
 import jakarta.persistence.*;
 
+/** Tabla DATA.DBF del VSIAF. Clave: data. */
 @Entity
-@Table(name = "data_temp")
+@Table(name = "vsiaf_data")
 public class DataTemp {
 
+    /** DBF: DATA */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(length = 50)
     private String data;
-
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
 
     public String getData() { return data; }
     public void setData(String data) { this.data = data; }
