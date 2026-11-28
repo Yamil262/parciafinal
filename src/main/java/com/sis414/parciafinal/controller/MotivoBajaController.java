@@ -1,70 +1,57 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.entity.MotivoBaja;
-import com.sis414.parciafinal.repository.MotivoBajaRepository;
+import com.sis414.parciafinal.common.PageResponse;
+import com.sis414.parciafinal.dto.*;
+import com.sis414.parciafinal.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 
-/** Motivo de baja: tabla BAJA.DBF. La clave es la del DBF (codBaja), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/motivos-baja")
-@Tag(name = "Activos Fijos")
+@Tag(name = "Motivos de baja", description = "Catálogo de motivos de baja de activos (tabla BAJA).")
 public class MotivoBajaController {
 
-    private final MotivoBajaRepository repository;
+    private final MotivoBajaService motivoBajaService;
 
-    public MotivoBajaController(MotivoBajaRepository repository) {
-        this.repository = repository;
+    public MotivoBajaController(MotivoBajaService motivoBajaService) {
+        this.motivoBajaService = motivoBajaService;
     }
 
     @GetMapping
-    @Operation(summary = "Motivo de baja - Listar")
-    public List<MotivoBaja> findAll() {
-        return repository.findAll();
+    @Operation(summary = "Listar motivos de baja (paginado)")
+    public PageResponse<MotivoBajaResponse> listar(@ParameterObject Pageable pageable) {
+        return motivoBajaService.listar(pageable);
     }
 
     @GetMapping("/{codBaja}")
-    @Operation(summary = "Motivo de baja - Obtener por clave")
-    public MotivoBaja findByKey(@PathVariable("codBaja") Integer codBaja) {
-        return repository.findById(codBaja)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Motivo de baja no encontrado"));
+    @Operation(summary = "Obtener motivo de baja por clave")
+    public MotivoBajaResponse obtener(@PathVariable("codBaja") Integer codBaja) {
+        return motivoBajaService.obtener(codBaja);
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Motivo de baja - Nuevo")
-    public MotivoBaja create(@RequestBody MotivoBaja body) {
-        if (body.getCodBaja() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: codBaja");
-        }
-        if (repository.existsById(body.getCodBaja())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Motivo de baja ya existe");
-        }
-        return repository.save(body);
+    @Operation(summary = "Crear motivo de baja")
+    public ResponseEntity<MotivoBajaResponse> crear(@Valid @RequestBody MotivoBajaRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(motivoBajaService.crear(request));
     }
 
     @PutMapping("/{codBaja}")
-    @Operation(summary = "Motivo de baja - Modificar")
-    public MotivoBaja update(@PathVariable("codBaja") Integer codBaja, @RequestBody MotivoBaja body) {
-        if (!repository.existsById(codBaja)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Motivo de baja no encontrado");
-        }
-        body.setCodBaja(codBaja);
-        return repository.save(body);
+    @Operation(summary = "Modificar motivo de baja")
+    public MotivoBajaResponse actualizar(@PathVariable("codBaja") Integer codBaja, @Valid @RequestBody MotivoBajaRequest request) {
+        return motivoBajaService.actualizar(codBaja, request);
     }
 
     @DeleteMapping("/{codBaja}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Motivo de baja - Eliminar")
-    public void delete(@PathVariable("codBaja") Integer codBaja) {
-        if (!repository.existsById(codBaja)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Motivo de baja no encontrado");
-        }
-        repository.deleteById(codBaja);
+    @Operation(summary = "Eliminar motivo de baja")
+    public void eliminar(@PathVariable("codBaja") Integer codBaja) {
+        motivoBajaService.eliminar(codBaja);
     }
 }

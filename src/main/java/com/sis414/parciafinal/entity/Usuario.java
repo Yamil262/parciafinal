@@ -1,45 +1,42 @@
 package com.sis414.parciafinal.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
-/** Tabla PASSW.DBF del VSIAF. Clave: usuario. */
+/** Tabla passw (migrada desde PASSW.DBF). El campo psw guarda SOLO el hash de la contraseña. */
 @Entity
-@Table(name = "vsiaf_passw")
+@Table(name = "passw")
 public class Usuario {
 
-    /** DBF: USUARIO */
     @Id
-    @Column(length = 10)
+    @Column(name = "usuario", length = 10, nullable = false)
     private String usuario;
 
-    /** DBF: COMPLETO */
-    @Column(length = 40)
+    @Column(name = "completo", length = 40)
     private String completo;
 
-    /** DBF: DES */
-    @Column(length = 50)
+    @Column(name = "des", length = 50)
     private String des;
 
-    /** DBF: PSW */
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @Column(length = 10)
+    /** Hash PBKDF2 (formato PBKDF2$iter$salt$hash) o valor legado "LEGACY:HEX". Nunca se expone. */
+    @Column(name = "psw", length = 120)
     private String psw;
 
-    /** DBF: TIPO */
+    @Column(name = "tipo")
     private Boolean tipo;
 
-    /** DBF: GRUPO */
-    @Column(length = 8)
+    @Column(name = "grupo", length = 8)
     private String grupo;
 
-    /** DBF: FEULT */
+    @Column(name = "feult")
     private LocalDate feult;
 
-    /** DBF: USUAR */
-    @Column(length = 8)
+    @Column(name = "usuar", length = 8)
     private String usuar;
+
+    public Usuario() {
+    }
 
     public String getUsuario() { return usuario; }
     public void setUsuario(String usuario) { this.usuario = usuario; }

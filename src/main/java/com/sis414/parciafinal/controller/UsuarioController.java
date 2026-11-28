@@ -1,70 +1,58 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.entity.Usuario;
-import com.sis414.parciafinal.repository.UsuarioRepository;
+import com.sis414.parciafinal.common.PageResponse;
+import com.sis414.parciafinal.dto.UsuarioRequest;
+import com.sis414.parciafinal.dto.UsuarioResponse;
+import com.sis414.parciafinal.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-
-/** Usuario: tabla PASSW.DBF. La clave es la del DBF (usuario), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/usuarios")
-@Tag(name = "Administradores")
+@Tag(name = "Usuarios", description = "Usuarios del sistema (tabla PASSW). Nunca se devuelve la contraseña ni su hash.")
 public class UsuarioController {
 
-    private final UsuarioRepository repository;
+    private final UsuarioService usuarioService;
 
-    public UsuarioController(UsuarioRepository repository) {
-        this.repository = repository;
+    public UsuarioController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
     }
 
     @GetMapping
-    @Operation(summary = "Usuario - Listar")
-    public List<Usuario> findAll() {
-        return repository.findAll();
+    @Operation(summary = "Listar usuarios (paginado)")
+    public PageResponse<UsuarioResponse> listar(@ParameterObject Pageable pageable) {
+        return usuarioService.listar(pageable);
     }
 
     @GetMapping("/{usuario}")
-    @Operation(summary = "Usuario - Obtener por clave")
-    public Usuario findByKey(@PathVariable("usuario") String usuario) {
-        return repository.findById(usuario)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado"));
+    @Operation(summary = "Obtener usuario")
+    public UsuarioResponse obtener(@PathVariable("usuario") String usuario) {
+        return usuarioService.obtener(usuario);
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Usuario - Nuevo")
-    public Usuario create(@RequestBody Usuario body) {
-        if (body.getUsuario() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: usuario");
-        }
-        if (repository.existsById(body.getUsuario())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Usuario ya existe");
-        }
-        return repository.save(body);
+    @Operation(summary = "Crear usuario (la contraseña se guarda con hash PBKDF2)")
+    public ResponseEntity<UsuarioResponse> crear(@Valid @RequestBody UsuarioRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.crear(request));
     }
 
     @PutMapping("/{usuario}")
-    @Operation(summary = "Usuario - Modificar")
-    public Usuario update(@PathVariable("usuario") String usuario, @RequestBody Usuario body) {
-        if (!repository.existsById(usuario)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado");
-        }
-        body.setUsuario(usuario);
-        return repository.save(body);
+    @Operation(summary = "Modificar usuario (password opcional)")
+    public UsuarioResponse actualizar(@PathVariable("usuario") String usuario,
+                                      @Valid @RequestBody UsuarioRequest request) {
+        return usuarioService.actualizar(usuario, request);
     }
 
     @DeleteMapping("/{usuario}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Usuario - Eliminar")
-    public void delete(@PathVariable("usuario") String usuario) {
-        if (!repository.existsById(usuario)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado");
-        }
-        repository.deleteById(usuario);
+    @Operation(summary = "Eliminar usuario")
+    public void eliminar(@PathVariable("usuario") String usuario) {
+        usuarioService.eliminar(usuario);
     }
 }

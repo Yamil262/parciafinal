@@ -1,70 +1,57 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.entity.Estado;
-import com.sis414.parciafinal.repository.EstadoRepository;
+import com.sis414.parciafinal.common.PageResponse;
+import com.sis414.parciafinal.dto.*;
+import com.sis414.parciafinal.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 
-/** Estado: tabla ESTADO.DBF. La clave es la del DBF (codEstado), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/estados")
-@Tag(name = "Activos Fijos")
+@Tag(name = "Estados del bien", description = "Estado de conservación del bien: Bueno, Regular, Malo (tabla ESTADO).")
 public class EstadoController {
 
-    private final EstadoRepository repository;
+    private final EstadoService estadoService;
 
-    public EstadoController(EstadoRepository repository) {
-        this.repository = repository;
+    public EstadoController(EstadoService estadoService) {
+        this.estadoService = estadoService;
     }
 
     @GetMapping
-    @Operation(summary = "Estado - Listar")
-    public List<Estado> findAll() {
-        return repository.findAll();
+    @Operation(summary = "Listar estados del bien (paginado)")
+    public PageResponse<EstadoResponse> listar(@ParameterObject Pageable pageable) {
+        return estadoService.listar(pageable);
     }
 
     @GetMapping("/{codEstado}")
-    @Operation(summary = "Estado - Obtener por clave")
-    public Estado findByKey(@PathVariable("codEstado") Integer codEstado) {
-        return repository.findById(codEstado)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Estado no encontrado"));
+    @Operation(summary = "Obtener estado del bien por clave")
+    public EstadoResponse obtener(@PathVariable("codEstado") Integer codEstado) {
+        return estadoService.obtener(codEstado);
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Estado - Nuevo")
-    public Estado create(@RequestBody Estado body) {
-        if (body.getCodEstado() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: codEstado");
-        }
-        if (repository.existsById(body.getCodEstado())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Estado ya existe");
-        }
-        return repository.save(body);
+    @Operation(summary = "Crear estado del bien")
+    public ResponseEntity<EstadoResponse> crear(@Valid @RequestBody EstadoRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(estadoService.crear(request));
     }
 
     @PutMapping("/{codEstado}")
-    @Operation(summary = "Estado - Modificar")
-    public Estado update(@PathVariable("codEstado") Integer codEstado, @RequestBody Estado body) {
-        if (!repository.existsById(codEstado)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Estado no encontrado");
-        }
-        body.setCodEstado(codEstado);
-        return repository.save(body);
+    @Operation(summary = "Modificar estado del bien")
+    public EstadoResponse actualizar(@PathVariable("codEstado") Integer codEstado, @Valid @RequestBody EstadoRequest request) {
+        return estadoService.actualizar(codEstado, request);
     }
 
     @DeleteMapping("/{codEstado}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Estado - Eliminar")
-    public void delete(@PathVariable("codEstado") Integer codEstado) {
-        if (!repository.existsById(codEstado)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Estado no encontrado");
-        }
-        repository.deleteById(codEstado);
+    @Operation(summary = "Eliminar estado del bien")
+    public void eliminar(@PathVariable("codEstado") Integer codEstado) {
+        estadoService.eliminar(codEstado);
     }
 }

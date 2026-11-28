@@ -1,71 +1,73 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.entity.UnidadAdmin;
-import com.sis414.parciafinal.repository.UnidadAdminRepository;
+import com.sis414.parciafinal.common.PageResponse;
+import com.sis414.parciafinal.dto.*;
+import com.sis414.parciafinal.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 
-/** Unidad administrativa: tabla UNIDADADMIN.DBF. La clave es la del DBF (entidad, unidad), no hay "id" artificial. */
 @RestController
-@RequestMapping("/api/unidades-admin")
-@Tag(name = "Administrar Unidad")
+@RequestMapping("/api/unidades")
+@Tag(name = "Unidades administrativas", description = "Unidades administrativas de una entidad (tabla UNIDADADMIN). Raíz de la jerarquía.")
 public class UnidadAdminController {
 
-    private final UnidadAdminRepository repository;
+    private final UnidadAdminService unidadAdminService;
+    private final OficinaService oficinaService;
+    private final ActualService actualService;
 
-    public UnidadAdminController(UnidadAdminRepository repository) {
-        this.repository = repository;
+    public UnidadAdminController(UnidadAdminService unidadAdminService, OficinaService oficinaService, ActualService actualService) {
+        this.unidadAdminService = unidadAdminService;
+        this.oficinaService = oficinaService;
+        this.actualService = actualService;
     }
 
     @GetMapping
-    @Operation(summary = "Unidad administrativa - Listar")
-    public List<UnidadAdmin> findAll() {
-        return repository.findAll();
+    @Operation(summary = "Listar unidades administrativas (paginado)")
+    public PageResponse<UnidadAdminResponse> listar(@ParameterObject Pageable pageable) {
+        return unidadAdminService.listar(pageable);
     }
 
     @GetMapping("/{entidad}/{unidad}")
-    @Operation(summary = "Unidad administrativa - Obtener por clave")
-    public UnidadAdmin findByKey(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad) {
-        return repository.findById(new UnidadAdmin.Key(entidad, unidad))
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Unidad administrativa no encontrado"));
+    @Operation(summary = "Obtener unidad administrativa por clave")
+    public UnidadAdminResponse obtener(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad) {
+        return unidadAdminService.obtener(entidad, unidad);
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Unidad administrativa - Nuevo")
-    public UnidadAdmin create(@RequestBody UnidadAdmin body) {
-        if (body.getEntidad() == null || body.getUnidad() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: entidad, unidad");
-        }
-        if (repository.existsById(new UnidadAdmin.Key(body.getEntidad(), body.getUnidad()))) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Unidad administrativa ya existe");
-        }
-        return repository.save(body);
+    @Operation(summary = "Crear unidad administrativa")
+    public ResponseEntity<UnidadAdminResponse> crear(@Valid @RequestBody UnidadAdminRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(unidadAdminService.crear(request));
     }
 
     @PutMapping("/{entidad}/{unidad}")
-    @Operation(summary = "Unidad administrativa - Modificar")
-    public UnidadAdmin update(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad, @RequestBody UnidadAdmin body) {
-        if (!repository.existsById(new UnidadAdmin.Key(entidad, unidad))) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unidad administrativa no encontrado");
-        }
-        body.setEntidad(entidad);
-        body.setUnidad(unidad);
-        return repository.save(body);
+    @Operation(summary = "Modificar unidad administrativa")
+    public UnidadAdminResponse actualizar(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad, @Valid @RequestBody UnidadAdminRequest request) {
+        return unidadAdminService.actualizar(entidad, unidad, request);
     }
 
     @DeleteMapping("/{entidad}/{unidad}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Unidad administrativa - Eliminar")
-    public void delete(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad) {
-        if (!repository.existsById(new UnidadAdmin.Key(entidad, unidad))) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unidad administrativa no encontrado");
-        }
-        repository.deleteById(new UnidadAdmin.Key(entidad, unidad));
+    @Operation(summary = "Eliminar unidad administrativa")
+    public void eliminar(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad) {
+        unidadAdminService.eliminar(entidad, unidad);
+    }
+
+    @GetMapping("/{entidad}/{unidad}/oficinas")
+    @Operation(summary = "Oficinas de la unidad")
+    public List<OficinaResponse> oficinas(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad) {
+        return oficinaService.listarPorUnidad(entidad, unidad);
+    }
+
+    @GetMapping("/{entidad}/{unidad}/activos")
+    @Operation(summary = "Activos fijos de la unidad")
+    public List<ActualResponse> activos(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad) {
+        return actualService.listarPorUnidad(entidad, unidad);
     }
 }

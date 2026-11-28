@@ -1,71 +1,57 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.entity.OrganismoFin;
-import com.sis414.parciafinal.repository.OrganismoFinRepository;
+import com.sis414.parciafinal.common.PageResponse;
+import com.sis414.parciafinal.dto.*;
+import com.sis414.parciafinal.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 
-/** Organismo financiador: tabla ORGANISMO_FIN.DBF. La clave es la del DBF (gestion, codOf), no hay "id" artificial. */
 @RestController
 @RequestMapping("/api/organismos-financiadores")
-@Tag(name = "Activos Fijos")
+@Tag(name = "Organismos financiadores", description = "Organismos financiadores por gestión (tabla ORGANISMO_FIN).")
 public class OrganismoFinController {
 
-    private final OrganismoFinRepository repository;
+    private final OrganismoFinService organismoFinService;
 
-    public OrganismoFinController(OrganismoFinRepository repository) {
-        this.repository = repository;
+    public OrganismoFinController(OrganismoFinService organismoFinService) {
+        this.organismoFinService = organismoFinService;
     }
 
     @GetMapping
-    @Operation(summary = "Organismo financiador - Listar")
-    public List<OrganismoFin> findAll() {
-        return repository.findAll();
+    @Operation(summary = "Listar organismos financiadores (paginado)")
+    public PageResponse<OrganismoFinResponse> listar(@ParameterObject Pageable pageable) {
+        return organismoFinService.listar(pageable);
     }
 
     @GetMapping("/{gestion}/{codOf}")
-    @Operation(summary = "Organismo financiador - Obtener por clave")
-    public OrganismoFin findByKey(@PathVariable("gestion") Integer gestion, @PathVariable("codOf") String codOf) {
-        return repository.findById(new OrganismoFin.Key(gestion, codOf))
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Organismo financiador no encontrado"));
+    @Operation(summary = "Obtener organismo financiador por clave")
+    public OrganismoFinResponse obtener(@PathVariable("gestion") Integer gestion, @PathVariable("codOf") String codOf) {
+        return organismoFinService.obtener(gestion, codOf);
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Organismo financiador - Nuevo")
-    public OrganismoFin create(@RequestBody OrganismoFin body) {
-        if (body.getGestion() == null || body.getCodOf() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: gestion, codOf");
-        }
-        if (repository.existsById(new OrganismoFin.Key(body.getGestion(), body.getCodOf()))) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Organismo financiador ya existe");
-        }
-        return repository.save(body);
+    @Operation(summary = "Crear organismo financiador")
+    public ResponseEntity<OrganismoFinResponse> crear(@Valid @RequestBody OrganismoFinRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(organismoFinService.crear(request));
     }
 
     @PutMapping("/{gestion}/{codOf}")
-    @Operation(summary = "Organismo financiador - Modificar")
-    public OrganismoFin update(@PathVariable("gestion") Integer gestion, @PathVariable("codOf") String codOf, @RequestBody OrganismoFin body) {
-        if (!repository.existsById(new OrganismoFin.Key(gestion, codOf))) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Organismo financiador no encontrado");
-        }
-        body.setGestion(gestion);
-        body.setCodOf(codOf);
-        return repository.save(body);
+    @Operation(summary = "Modificar organismo financiador")
+    public OrganismoFinResponse actualizar(@PathVariable("gestion") Integer gestion, @PathVariable("codOf") String codOf, @Valid @RequestBody OrganismoFinRequest request) {
+        return organismoFinService.actualizar(gestion, codOf, request);
     }
 
     @DeleteMapping("/{gestion}/{codOf}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Organismo financiador - Eliminar")
-    public void delete(@PathVariable("gestion") Integer gestion, @PathVariable("codOf") String codOf) {
-        if (!repository.existsById(new OrganismoFin.Key(gestion, codOf))) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Organismo financiador no encontrado");
-        }
-        repository.deleteById(new OrganismoFin.Key(gestion, codOf));
+    @Operation(summary = "Eliminar organismo financiador")
+    public void eliminar(@PathVariable("gestion") Integer gestion, @PathVariable("codOf") String codOf) {
+        organismoFinService.eliminar(gestion, codOf);
     }
 }

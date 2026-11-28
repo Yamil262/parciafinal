@@ -1,88 +1,122 @@
 package com.sis414.parciafinal.entity;
 
 import jakarta.persistence.*;
-import java.io.Serializable;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Objects;
 
-/** Tabla OFICINA.DBF del VSIAF. Clave: entidad, unidad, codOfic. */
+/** Tabla oficina (migrada desde OFICINA.DBF). */
 @Entity
-@Table(name = "vsiaf_oficina")
-@IdClass(Oficina.Key.class)
+@Table(name = "oficina")
+@IdClass(OficinaId.class)
 public class Oficina {
 
-    /** DBF: ENTIDAD */
     @Id
-    @Column(length = 4)
+    @Column(name = "entidad", length = 4, nullable = false)
     private String entidad;
 
-    /** DBF: UNIDAD */
     @Id
-    @Column(length = 5)
+    @Column(name = "unidad", length = 5, nullable = false)
     private String unidad;
 
-    /** DBF: CODOFIC */
     @Id
+    @Column(name = "codofic", nullable = false)
     private Integer codOfic;
 
-    /** DBF: NOMOFIC */
-    @Column(length = 65)
+    @Column(name = "nomofic", length = 65)
     private String nomOfic;
 
-    /** DBF: OBSERV */
-    @Column(columnDefinition = "text")
+    @Column(name = "observ", columnDefinition = "TEXT")
     private String observ;
 
-    /** DBF: FEULT */
+    @Column(name = "feult")
     private LocalDate feult;
 
-    /** DBF: USUAR */
-    @Column(length = 8)
+    @Column(name = "usuar", length = 8)
     private String usuar;
 
-    /** DBF: extensión, no está en el DBF */
+    @Column(name = "api_estado")
     private Integer apiEstado;
 
-    public String getEntidad() { return entidad; }
-    public void setEntidad(String entidad) { this.entidad = entidad; }
-    public String getUnidad() { return unidad; }
-    public void setUnidad(String unidad) { this.unidad = unidad; }
-    public Integer getCodOfic() { return codOfic; }
-    public void setCodOfic(Integer codOfic) { this.codOfic = codOfic; }
-    public String getNomOfic() { return nomOfic; }
-    public void setNomOfic(String nomOfic) { this.nomOfic = nomOfic; }
-    public String getObserv() { return observ; }
-    public void setObserv(String observ) { this.observ = observ; }
-    public LocalDate getFeult() { return feult; }
-    public void setFeult(LocalDate feult) { this.feult = feult; }
-    public String getUsuar() { return usuar; }
-    public void setUsuar(String usuar) { this.usuar = usuar; }
-    public Integer getApiEstado() { return apiEstado; }
-    public void setApiEstado(Integer apiEstado) { this.apiEstado = apiEstado; }
+    /** Relación de solo lectura (sin restricción FK, los datos legados pueden tener referencias huérfanas). */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @NotFound(action = NotFoundAction.IGNORE)
+    @JoinColumns(value = {
+        @JoinColumn(name = "entidad", referencedColumnName = "entidad", insertable = false, updatable = false, foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT)),
+        @JoinColumn(name = "unidad", referencedColumnName = "unidad", insertable = false, updatable = false, foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    }, foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
+    private UnidadAdmin unidadAdmin;
 
-    /** Clave compuesta (entidad, unidad, codOfic) */
-    public static class Key implements Serializable {
-        private String entidad;
-        private String unidad;
-        private Integer codOfic;
-        public Key() {}
-        public Key(String entidad, String unidad, Integer codOfic) {
-            this.entidad = entidad;
-            this.unidad = unidad;
-            this.codOfic = codOfic;
-        }
-        public String getEntidad() { return entidad; }
-        public void setEntidad(String entidad) { this.entidad = entidad; }
-        public String getUnidad() { return unidad; }
-        public void setUnidad(String unidad) { this.unidad = unidad; }
-        public Integer getCodOfic() { return codOfic; }
-        public void setCodOfic(Integer codOfic) { this.codOfic = codOfic; }
-        @Override public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Key)) return false;
-            Key x = (Key) o;
-            return Objects.equals(entidad, x.entidad) && Objects.equals(unidad, x.unidad) && Objects.equals(codOfic, x.codOfic);
-        }
-        @Override public int hashCode() { return Objects.hash(entidad, unidad, codOfic); }
+    public Oficina() {
     }
+
+    public String getEntidad() {
+        return entidad;
+    }
+
+    public void setEntidad(String entidad) {
+        this.entidad = entidad;
+    }
+
+    public String getUnidad() {
+        return unidad;
+    }
+
+    public void setUnidad(String unidad) {
+        this.unidad = unidad;
+    }
+
+    public Integer getCodOfic() {
+        return codOfic;
+    }
+
+    public void setCodOfic(Integer codOfic) {
+        this.codOfic = codOfic;
+    }
+
+    public String getNomOfic() {
+        return nomOfic;
+    }
+
+    public void setNomOfic(String nomOfic) {
+        this.nomOfic = nomOfic;
+    }
+
+    public String getObserv() {
+        return observ;
+    }
+
+    public void setObserv(String observ) {
+        this.observ = observ;
+    }
+
+    public LocalDate getFeult() {
+        return feult;
+    }
+
+    public void setFeult(LocalDate feult) {
+        this.feult = feult;
+    }
+
+    public String getUsuar() {
+        return usuar;
+    }
+
+    public void setUsuar(String usuar) {
+        this.usuar = usuar;
+    }
+
+    public Integer getApiEstado() {
+        return apiEstado;
+    }
+
+    public void setApiEstado(Integer apiEstado) {
+        this.apiEstado = apiEstado;
+    }
+
+    public UnidadAdmin getUnidadAdmin() {
+        return unidadAdmin;
+    }
+
 }

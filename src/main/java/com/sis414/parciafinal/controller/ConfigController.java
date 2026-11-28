@@ -1,71 +1,57 @@
 package com.sis414.parciafinal.controller;
 
-import com.sis414.parciafinal.entity.Config;
-import com.sis414.parciafinal.repository.ConfigRepository;
+import com.sis414.parciafinal.common.PageResponse;
+import com.sis414.parciafinal.dto.*;
+import com.sis414.parciafinal.service.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import org.springdoc.core.annotations.ParameterObject;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 
-/** Configuración: tabla CONFIG.DBF. La clave es la del DBF (entidad, unidad), no hay "id" artificial. */
 @RestController
-@RequestMapping("/api/configuraciones")
-@Tag(name = "Localización BD")
+@RequestMapping("/api/configuracion")
+@Tag(name = "Configuración", description = "Configuración de entidad/unidad por usuario (tabla CONFIG). Id autogenerado (la tabla original no tiene clave única).")
 public class ConfigController {
 
-    private final ConfigRepository repository;
+    private final ConfigService configService;
 
-    public ConfigController(ConfigRepository repository) {
-        this.repository = repository;
+    public ConfigController(ConfigService configService) {
+        this.configService = configService;
     }
 
     @GetMapping
-    @Operation(summary = "Configuración - Listar")
-    public List<Config> findAll() {
-        return repository.findAll();
+    @Operation(summary = "Listar configuraciones (paginado)")
+    public PageResponse<ConfigResponse> listar(@ParameterObject Pageable pageable) {
+        return configService.listar(pageable);
     }
 
-    @GetMapping("/{entidad}/{unidad}")
-    @Operation(summary = "Configuración - Obtener por clave")
-    public Config findByKey(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad) {
-        return repository.findById(new Config.Key(entidad, unidad))
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Configuración no encontrado"));
+    @GetMapping("/{id}")
+    @Operation(summary = "Obtener configuración por clave")
+    public ConfigResponse obtener(@PathVariable("id") Long id) {
+        return configService.obtener(id);
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary = "Configuración - Nuevo")
-    public Config create(@RequestBody Config body) {
-        if (body.getEntidad() == null || body.getUnidad() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Falta la clave: entidad, unidad");
-        }
-        if (repository.existsById(new Config.Key(body.getEntidad(), body.getUnidad()))) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Configuración ya existe");
-        }
-        return repository.save(body);
+    @Operation(summary = "Crear configuración")
+    public ResponseEntity<ConfigResponse> crear(@Valid @RequestBody ConfigRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(configService.crear(request));
     }
 
-    @PutMapping("/{entidad}/{unidad}")
-    @Operation(summary = "Configuración - Modificar")
-    public Config update(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad, @RequestBody Config body) {
-        if (!repository.existsById(new Config.Key(entidad, unidad))) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Configuración no encontrado");
-        }
-        body.setEntidad(entidad);
-        body.setUnidad(unidad);
-        return repository.save(body);
+    @PutMapping("/{id}")
+    @Operation(summary = "Modificar configuración")
+    public ConfigResponse actualizar(@PathVariable("id") Long id, @Valid @RequestBody ConfigRequest request) {
+        return configService.actualizar(id, request);
     }
 
-    @DeleteMapping("/{entidad}/{unidad}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @Operation(summary = "Configuración - Eliminar")
-    public void delete(@PathVariable("entidad") String entidad, @PathVariable("unidad") String unidad) {
-        if (!repository.existsById(new Config.Key(entidad, unidad))) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Configuración no encontrado");
-        }
-        repository.deleteById(new Config.Key(entidad, unidad));
+    @Operation(summary = "Eliminar configuración")
+    public void eliminar(@PathVariable("id") Long id) {
+        configService.eliminar(id);
     }
 }

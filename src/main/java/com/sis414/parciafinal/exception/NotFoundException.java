@@ -1,0 +1,9 @@
+package com.sis414.parciafinal.exception;
+
+/** Recurso inexistente (404). */
+public class NotFoundException extends RuntimeException {
+
+    public NotFoundException(String message) {
+        super(message);
+    }
+}
